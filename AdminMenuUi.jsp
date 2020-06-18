@@ -13,7 +13,7 @@
 	<h1>ISBNを入力してください</h1>
 
     <%String isbn = (String)request.getParameter("isbn");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="isbn" type="text">
     	<input type="submit">
     </form>
@@ -21,7 +21,7 @@
     <h1>書籍名を入力してください</h1>
 
     <%String title = (String)request.getParameter("title");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="title" type="text">
     	<input type="submit">
     </form>
@@ -29,7 +29,7 @@
     <h1>出版社を入力してください</h1>
 
     <%String publisher = (String)request.getParameter("publisher");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="publisher" type="text">
     	<input type="submit">
     </form>
@@ -37,7 +37,7 @@
     <h1>出版日を入力してください</h1>
 
     <%String strDate = (String)request.getParameter("strDate");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="strDate" type="text">
     	<input type="submit">
     </form>
@@ -45,7 +45,7 @@
     <h1>分野を入力してください</h1>
 
     <%String field = (String)request.getParameter("field");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="field" type="text">
     	<input type="submit">
     </form>
@@ -53,7 +53,7 @@
     <h1>著者を入力してください</h1>
 
     <%String str4 = (String)request.getParameter("str4");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="str4" type="text">
     	<input type="submit">
     </form>
@@ -61,7 +61,7 @@
     <h1>在庫数を入力してください</h1>
 
     <%String inventory = (String)request.getParameter("inventory");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="inventory" type="text">
     	<input type="submit">
     </form>
@@ -69,7 +69,7 @@
     <h1>在庫数を入力してください</h1>
 
     <%String borrowedAmountUi = (String)request.getParameter("borrorwedAmountUi");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="borrowedAmountUi" type="text">
     	<input type="submit">
     </form>
@@ -81,7 +81,7 @@
       out.println("<br/>2.貸出本の更新<br/>");
       out.println("<br/>3.終了<br/>");
 	      %> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="selectedUi" type="text">
     	<input type="submit">
     </form>
@@ -89,7 +89,7 @@
     <h1>ISBNを入力してください</h1>
 
     <%String deleteISBN = (String)request.getParameter("deleteISBN");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="deleteISBN" type="text">
     	<input type="submit">
     </form>
@@ -97,7 +97,7 @@
     <h1>貸出期限を入力してください</h1>
 
     <%String bookPeriod = (String)request.getParameter("bookPeriod");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="bookPeriod" type="text">
     	<input type="submit">
     </form>
@@ -105,7 +105,7 @@
     <h1>書籍数を入力してください</h1>
 
     <%String addInventory = (String)request.getParameter("addInventory");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="addInventory" type="text">
     	<input type="submit">
     </form>
@@ -113,7 +113,7 @@
     <h1>書籍の貸出数を入力してください</h1>
 
     <%String addBorrowedAmount = (String)request.getParameter("addBorrowedAmount");%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="addBorrowedAmount" type="text">
     	<input type="submit">
     </form>
@@ -132,7 +132,7 @@
         }
         while(!(returnMainMenu == 1||returnMainMenu == 2));
     	%> 
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="returnMainMenu" type="text">
     	<input type="submit">
     </form>

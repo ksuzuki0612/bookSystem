@@ -25,7 +25,7 @@
             logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
             return authorAdd;%> 
             	
-    <form action="NewServlet" method="POST">
+    <form action="UI" method="POST">
     	<input name="authorAdd" type="text">
     	<input type="submit">
     </form>
