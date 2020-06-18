@@ -14,7 +14,15 @@ public class ResetPasswordServlet extends HttpServlet{
             res.sendRedirect("PassResultUI.jsp");
             String strID =req.getParameter("empID");
             empID =Integer.parseInt(strID);
-            
+
+            String newPassword =req.getParameter("newPassword"); 
+            String checkPassword =req.getParameter("checkPassword");
+
+            boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
+
+            HttpSession session = request.getSession();
+            session.setAttribute("result",result);
+
         }
         else{
             res.sendRedirect("choiceAdminMenuUI.jsp");
