@@ -13,16 +13,16 @@ public class LoginServlet extends HttpServlet{
         int ID = login.loginCheck(empID,password);
 
         if(ID == 0){
-            //JSP　
+            res.sendRedirect("wrongPass.jsp");
         }
 
         boolean adminRight = login.checkRight(ID);
 
         if(adminRight == true){
-            //JSP adminMenu
+            res.sendRedirect();
         }
         else{
-            //JSP User
+            res.sendRedirect();
         }
 
         
