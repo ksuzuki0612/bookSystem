@@ -6,7 +6,7 @@
 <h2>1.はい　2.いいえ</h2>
 
 <form action="NewServlet" method="POST">
-    <input name="ans" type="text">
+    <input name="ans" type="number">
     <input type="submit">
 </form>
 
