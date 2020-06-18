@@ -1,8 +1,7 @@
 ﻿<%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 	
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
-	"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <html>
 <head>
@@ -15,7 +14,7 @@
     <h1>著者を追加する場合は１、行わない場合は２を入力してください</h1>
 
     <%int authorAdd=0;
-    String authorAdd = (String)request.getParameter("authorAdd");
+    int authorAdd = (int)request.getParameter("authorAdd");
         do{
             authorAdd = 0;
             System.out.println("著者を追加する場合は１、行わない場合は２を入力してください");
