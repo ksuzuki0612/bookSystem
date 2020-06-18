@@ -36,7 +36,6 @@ public class Login {
 
     /**
      * ユーザーが管理者権限を持っているかを確認するメソッド
-     * 
      * @param empID
      * @return boolean adminRight
      * @throws SQLException
