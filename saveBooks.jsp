@@ -4,7 +4,7 @@
 
 <h1>書籍を保存するファイル名を入力してください（拡張子なし）</h1>
 
-<form action="NewServlet" method="POST">
+<form action="UserMenu" method="POST">
     <input name="saveFileName" type="text">
     <input type="submit">
 </form>
