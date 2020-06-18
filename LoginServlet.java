@@ -10,6 +10,21 @@ public class LoginServlet extends HttpServlet{
         int empID = req.getParameter("empID");
         String password = req.getParmeter("password");
 
+        int ID = login.loginCheck(empID,password);
+
+        if(ID == 0){
+            //JSP　
+        }
+
+        boolean adminRight = login.checkRight(ID);
+
+        if(adminRight == true){
+            //JSP adminMenu
+        }
+        else{
+            //JSP User
+        }
+
         
     }
 }
