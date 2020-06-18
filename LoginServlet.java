@@ -7,7 +7,8 @@ public class LoginServlet extends HttpServlet{
     throws ServletException,IOException{
         Login login = new Login();
 
-        int empID = req.getParameter("empID");
+        String strID = req.getParameter("empID");
+        empID =Integer.parseInt(strID);
         String password = req.getParmeter("password");
 
         int ID = login.loginCheck(empID,password);
