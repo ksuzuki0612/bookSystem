@@ -26,6 +26,5 @@ public class LoginServlet extends HttpServlet{
             res.sendRedirect("choiceMenuUser.jsp");
         }
 
-        
     }
 }

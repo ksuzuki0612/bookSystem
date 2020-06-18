@@ -16,7 +16,6 @@ public class Login {
     
     /**
      * ログインのための従業員IDとパスワードを確認するメソッド
-     * 
      * @return checkEmpId
      * @throws SQLException
      */

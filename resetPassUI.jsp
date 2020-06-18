@@ -9,6 +9,5 @@
     <input name="ans" type="number">
     <input type="submit">
 </form>
-
 </body>
 </html>
