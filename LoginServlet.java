@@ -19,10 +19,10 @@ public class LoginServlet extends HttpServlet{
         boolean adminRight = login.checkRight(ID);
 
         if(adminRight == true){
-            res.sendRedirect();
+            res.sendRedirect("choiceMenuUI.jsp");
         }
         else{
-            res.sendRedirect();
+            res.sendRedirect("choiceMenuUI.jsp");
         }
 
         
