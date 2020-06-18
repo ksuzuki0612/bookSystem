@@ -3,6 +3,7 @@
 <body>
 
 <h1>ログイン画面</h1>
+	
 <h2>従業員ID:</h2>
 
 <form action="NewServlet" method="POST">
