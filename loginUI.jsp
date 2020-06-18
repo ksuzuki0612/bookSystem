@@ -6,7 +6,7 @@
 
 <form action="LoginServlet" method="POST">
     <h2>従業員ID</h2>
-    <input name="empID" type="text">
+    <input name="empID" type="number">
     <h2>パスワード</h2>
     <input name="password" type="text">
     <input type="submit">

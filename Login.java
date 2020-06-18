@@ -13,23 +13,6 @@ public class Login {
     Logger logger = Logger.getLogger(AdminMenu.class.getName());
     UI uiLogin = new UI();
     SqlMethod sqlmethod = new SqlMethod();
-
-    /**
-     * このプログラムの最初のメソッド ログインかパスワードの再設定を選択する
-     * 
-     * @return loginChoice
-     * @throws SQLException
-     */
-    public int begin() throws SQLException {
-        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-        try {
-            uiLogin.loginUI(); //ログイン画面
-            int ID = loginCheck();
-            return ID;
-        } finally {
-            logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
-        }
-    }
     
     /**
      * ログインのための従業員IDとパスワードを確認するメソッド
@@ -49,24 +32,6 @@ public class Login {
         finally{
             logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
         }
-    }
-
-    public int checkResult(int ID) throws SQLException {
-        if(ID == 0){
-           //JSP
-            System.out.println("IDまたはパスワードが間違っています");
-            System.out.println("続ける場合は1,終了する場合は2を押してください");
-            int choice = new java.util.Scanner(System.in).nextInt();
-
-            if(choice == 1){
-                int reEnter = begin();
-                return reEnter;
-            }
-            else{
-                System.exit(0);
-            }
-        }
-        return ID;
     }
 
     /**
