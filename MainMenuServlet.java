@@ -27,7 +27,7 @@ public class MainMenuS extends HttpServlet{
                 break;
             case FeaturesMenu.ResetPass:
                 RequestDispatcher dispatch =
-                request.getRequestDispatcher("PassResetUI.jsp");
+                request.getRequestDispatcher("resetPassUI.jsp");
                 dispatch.forward(request, response);
                 boolean result = mainMenu.resetPassword();
                 HttpSession session = request.getSession();
@@ -55,7 +55,7 @@ public class MainMenuS extends HttpServlet{
                 continue;
             case FeaturesMenu.ResetPass:
                 RequestDispatcher dispatch =
-                request.getRequestDispatcher("PassResetUI.jsp");
+                request.getRequestDispatcher("resetPassUI.jsp");
                 dispatch.forward(request, response);
                 boolean result = mainMenu.resetPassword();
                 HttpSession session = request.getSession();
@@ -130,54 +130,3 @@ public class MainMenuS extends HttpServlet{
 }
     
     
-/*
-    public boolean resetPassword(){
-        PrintWriter out = response.getWriter();
-        out.println("パスワード再設定画面");
-        final int ans = request.getParameter("ans");
-        if(ans == 1){
-            final int empID = request.getParameter("empID");
-            boolean idCheck = checkLoginID(empID);
-            if(idCheck == true){
-                final String password = request.getParameter("newPassword");
-                final String checkPassword = request.getParameter("checkPassword");
-                final boolean checkResult = checkResetPass(
-                    empID, password, checkPassword);
-                return checkResult;
-            }else{
-                out.println("ログインされたIDと入力されたIDが異なります");
-                return false;
-            }
-        }else{
-            boolean checkResult = false;
-            return checkResult;
-        } 
-    }
-
-    static AdminMenu adminMenu = new AdminMenu();
-    static UserMenu userMenu = new UserMenu();
-    SqlMethod sqlmethod = new SqlMethod();
-
-    public boolean checkResetPass(
-        final int ID,final String pass,final String checkPass){
-        int empID = ID;
-        String password = pass;
-        String checkPassword = checkPass;
-        if(password.equals(checkPassword)){
-            sqlmethod.dbUpdatePassword(empID, password);
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public boolean checkLoginID(int ID){
-        int id = ID;
-        int checkID = LibraryMain.loginID;
-        if(id == checkID){
-            return true;
-        }else{
-            return false;
-        }
-    }
-*/
