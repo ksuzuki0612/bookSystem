@@ -18,7 +18,7 @@
       out.println("<br/>3.終了<br/>");
 	      %> 
     <form action="AdminMenu" method="POST">
-    	<input name="selectedUi" type="text">
+    	<input name="selected" type="text">
     	<input type="submit">
     </form>
     		  

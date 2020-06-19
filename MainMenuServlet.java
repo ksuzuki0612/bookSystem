@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 
 public class MainMenuServlet extends HttpServlet{
     UserMenu userMenu = new UserMenu();
-    RegisterBook registerBook = new RedisterBook();
+    RegisterBookServlet registerBookServlet = new RegisterBookServlet();
     DeleteBookServlet deleteBookServlet = new DeleteBookServlet();
     UpdataBook updataBook = new UpdataBook();
     BorrowBookServlet borrowBookServlet = new BorrowBookServlet();
@@ -43,7 +43,6 @@ public class MainMenuServlet extends HttpServlet{
 
             default:
                 out.println("再度入力してください");
-                continue;
             }
             
         int choiceUser = request.getParameter("choiceUser");
@@ -56,7 +55,7 @@ public class MainMenuServlet extends HttpServlet{
                 break;
             case FeaturesMenu.AdminMenu:
                 out.println("管理者権限がありません");
-                continue;
+                break;
             case FeaturesMenu.ResetPass:
                 RequestDispatcher dispatch =
                 request.getRequestDispatcher("resetPassUIUser.jsp");
@@ -67,7 +66,6 @@ public class MainMenuServlet extends HttpServlet{
                 break;
             default:
                 out.println("再度入力してください");
-                continue;
         }
     }
 
@@ -78,26 +76,25 @@ public class MainMenuServlet extends HttpServlet{
         int rb = request.getParameter("returnMainMenu");
         switch (selectedAdmin) {
             case AdminMenuNum.RegisterBook:
-                registerBook.();
+                registerBookServlet.doPost();
                 break;
             case AdminMenuNum.DeleteBook:
-                deleteBookServlet();
+                deleteBookServlet.doPost();
                 break;
             case AdminMenuNum.ChangeBookInfo:
                 updataBook.doGet();
                 break;
             case AdminMenuNum.LoanAproval:
-                borrowBookServlet();
+                borrowBookServlet.doPost();
                 break;
             case AdminMenuNum.ReturnApplication:
-                returnBook();
+                returnBook.doGet();
                 break;
             case AdminMenuNum.ReturnProgram:
                 out.println("6,戻る");
                 break;
             default:
                 out.println("再度入力してください");
-                continue;
         }
     }
 
@@ -126,8 +123,7 @@ public class MainMenuServlet extends HttpServlet{
                 out.println("3,戻る");
                 break;
             default:
-                out.println("再度入力してください");
-                continue; 
+                out.println("再度入力してください"); 
         }   
     } 
 
