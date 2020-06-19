@@ -11,7 +11,6 @@ public class ResetPasswordServletUser extends HttpServlet{
     protected void doPost(final HttpServletRequest req,final HttpServletResponse res)
     throws ServletException,IOException{
         final ResetPassword pass = new ResetPassword();
-
         final String ansStr = req.getParameter("ans");
         final int ans = Integer.parseInt(ansStr);
 

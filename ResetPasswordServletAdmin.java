@@ -11,7 +11,6 @@ public class ResetPasswordServletAdmin extends HttpServlet{
             throws ServletException, IOException {
 
         final ResetPassword pass = new ResetPassword();
-
         final String ansStr = req.getParameter("ans");
         final int ans = Integer.parseInt(ansStr);
 
