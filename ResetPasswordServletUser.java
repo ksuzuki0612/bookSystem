@@ -20,8 +20,9 @@ public class ResetPasswordServlet extends HttpServlet{
 
             boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
 
-            HttpSession session = request.getSession();
-            session.setAttribute("result",result);
+            req.setAttribute("result",result);
+            RequestDispatcher rd = req.getRequestDispatcher("/resultChangePassUser.jsp");
+            rd.forward(req,res);
 
         }
         else{
