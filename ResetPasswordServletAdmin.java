@@ -24,8 +24,8 @@ public class ResetPasswordServletAdmin extends HttpServlet{
             final String checkPassword = req.getParameter("checkPassword");
             final boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
 
-            req.setAttribute("result", result);
-            final RequestDispatcher rd = req.getRequestDispatcher("/resultChangePassAdmin.jsp");
+            ServletContext sc = getServletContext();
+            RequestDispatcher rd = sc.getRequestDispatcher("/resultChangePassAdmin.jsp");
             rd.forward(req,res);
         }
         else{
