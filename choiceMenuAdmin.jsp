@@ -8,7 +8,7 @@
 <h2>3.パスワードの再設定</h2>
 <h2>4.終了</h2>
 
-<form action="MainMenuS" method="POST">
+<form action="MainMenuServlet" method="POST">
     <input name="choiceAdmin" type="number">
     <input type="submit">
 </form>

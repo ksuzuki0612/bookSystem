@@ -6,7 +6,7 @@
 <h2>1.はい</h2>
 <h2>2.戻る</h2>
 
-<form action="NewServlet" method="POST">
+<form action="UserMenu" method="POST">
     <input name="s1" type="text">
     <input type="submit">
 </form>
