@@ -3,21 +3,22 @@ import javax.servlet.*;
 
 //@Web
 public class LoginServlet extends HttpServlet{
-    protected void doPost(HttpServletRequest req,HttpServletResponse res)
-    throws ServletException,IOException{
-        Login login = new Login();
+    protected void doPost(final HttpServletRequest req, final HttpServletResponse res)
+            throws ServletException, IOException {
+                
+        final Login login = new Login();
 
-        String strID = req.getParameter("empID");
-        empID =Integer.parseInt(strID);
-        String password = req.getParmeter("password");
+        final String strID = req.getParameter("empID");
+        empID = Integer.parseInt(strID);
+        final String password = req.getParmeter("password");
 
-        int ID = login.loginCheck(empID,password);
+        final int ID = login.loginCheck(empID, password);
 
-        if(ID == 0){
+        if (ID == 0) {
             res.sendRedirect("wrongPass.jsp");
         }
 
-        boolean adminRight = login.checkRight(ID);
+        final boolean adminRight = login.checkRight(ID);
 
         if(adminRight == true){
             res.sendRedirect("choiceMenuAdmin.jsp"); 
