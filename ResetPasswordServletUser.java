@@ -3,7 +3,7 @@ import java.net.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class ResetPasswordServlet extends HttpServlet{
+public class ResetPasswordServletUser extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
     throws ServletException,IOException{
         ResetPassword pass = new ResetPassword();
