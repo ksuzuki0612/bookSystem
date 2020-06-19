@@ -3,39 +3,43 @@ import java.net.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class MainMenuS extends HttpServlet{
+public class MainMenuServlet extends HttpServlet{
+    UserMenu userMenu = new UserMenu();
+    RegisterBook registerBook = new RedisterBook();
+    DeleteBookServlet deleteBookServlet = new DeleteBookServlet();
+    UpdataBook updataBook = new UpdataBook();
+    BorrowBookServlet borrowBookServlet = new BorrowBookServlet();
+    ReturnBook returnBook = new ReturnBook();
+
     public void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
-        MainMenu mainMenu = new MainMenu();
-        AdminMenu adminMenu = new AdminMenu();
-        UserMenu userMenu = new UserMenu();
+
         int choiceAdmin = request.getParameter("choiceAdmin");
+
         PrintWriter out = response.getWriter();
+
         switch (choiceAdmin) {
             case FeaturesMenu.UserMenu:
                 RequestDispatcher dispatch =
                 request.getRequestDispatcher("userMenuUI.jsp");
                 dispatch.forward(request, response);
-                mainMenu.userMainMenu();
+                userMainMenu();
                 break;
             case FeaturesMenu.AdminMenu:
                 RequestDispatcher dispatch =
                 request.getRequestDispatcher("adminMenuUI.jsp");
                 dispatch.forward(request, response);
-                mainMenu.adminMainMenu();
+                adminMainMenu();
                 break;
             case FeaturesMenu.ResetPass:
                 RequestDispatcher dispatch =
-                request.getRequestDispatcher("resetPassUI.jsp");
+                request.getRequestDispatcher("resetPassUIAdmin.jsp");
                 dispatch.forward(request, response);
-                boolean result = mainMenu.resetPassword();
-                HttpSession session = request.getSession();
-                session.setAttribute("result",result);
                 break;
             case FeaturesMenu.EndProgram:
                 out.println("終了");
-                break loop;
+                break;
 
             default:
                 out.println("再度入力してください");
@@ -48,56 +52,57 @@ public class MainMenuS extends HttpServlet{
                 RequestDispatcher dispatch =
                 request.getRequestDispatcher("userMenuUI.jsp");
                 dispatch.forward(request, response);
-                mainMenu.userMainMenu();
+                userMainMenu();
                 break;
             case FeaturesMenu.AdminMenu:
                 out.println("管理者権限がありません");
                 continue;
             case FeaturesMenu.ResetPass:
                 RequestDispatcher dispatch =
-                request.getRequestDispatcher("resetPassUI.jsp");
+                request.getRequestDispatcher("resetPassUIUser.jsp");
                 dispatch.forward(request, response);
-                boolean result = mainMenu.resetPassword();
-                HttpSession session = request.getSession();
-                session.setAttribute("result",result);
                 break;
             case FeaturesMenu.EndProgram:
                 out.println("終了");
-                break loop;
+                break;
             default:
                 out.println("再度入力してください");
                 continue;
         }
-
+    }
 
         
-
+    public void adminMainMenu(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException{
         int selectedAdmin = request.getParameter("selectedAdmin");
         int rb = request.getParameter("returnMainMenu");
         switch (selectedAdmin) {
             case AdminMenuNum.RegisterBook:
-                adminMenu.registerBook();
+                registerBook.();
                 break;
             case AdminMenuNum.DeleteBook:
-                adminMenu.deleteBook();
+                deleteBookServlet();
                 break;
             case AdminMenuNum.ChangeBookInfo:
-                adminMenu.updataBook();
+                updataBook.doGet();
                 break;
             case AdminMenuNum.LoanAproval:
-                adminMenu.allowBorrowBook();
+                borrowBookServlet();
                 break;
             case AdminMenuNum.ReturnApplication:
-                adminMenu.returnBook();
+                returnBook();
                 break;
             case AdminMenuNum.ReturnProgram:
                 out.println("6,戻る");
-                break loop;
+                break;
             default:
                 out.println("再度入力してください");
                 continue;
         }
+    }
 
+    public void userMainMenu(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException{
         final int selectedUser = request.getParameter("selectedUser");
         HttpSession session = request.getSession();
         session.setAttribute("selectedUser",selectedUser);
@@ -123,10 +128,9 @@ public class MainMenuS extends HttpServlet{
             default:
                 out.println("再度入力してください");
                 continue; 
-        }
-
-        
+        }   
     } 
+
 }
     
     
