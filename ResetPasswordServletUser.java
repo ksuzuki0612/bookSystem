@@ -4,24 +4,25 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class ResetPasswordServletUser extends HttpServlet{
-    ResetPassword pass = new ResetPassword();
     
-    protected void doPost(HttpServletRequest req,HttpServletResponse res)
+    protected void doPost(final HttpServletRequest req,final HttpServletResponse res)
     throws ServletException,IOException{
-        
-        int ans = req.getParameter("ans");
+        final ResetPassword pass = new ResetPassword();
 
-        if(ans == 1){
+        final String ansStr = req.getParameter("ans");
+        final int ans = Integer.parseInt(ansStr);
+
+        if (ans == 1) {
             res.sendRedirect("PassResultUI.jsp");
-            String strID =req.getParameter("empID");
-            int empID =Integer.parseInt(strID);
+            final String strID = req.getParameter("empID");
+            final int empID = Integer.parseInt(strID);
 
-            String newPassword =req.getParameter("newPassword"); 
-            String checkPassword =req.getParameter("checkPassword");
-            boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
+            final String newPassword = req.getParameter("newPassword");
+            final String checkPassword = req.getParameter("checkPassword");
+            final boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
 
-            req.setAttribute("result",result);
-            RequestDispatcher rd = req.getRequestDispatcher("/resultChangePassUser.jsp");
+            req.setAttribute("result", result);
+            final RequestDispatcher rd = req.getRequestDispatcher("/resultChangePassUser.jsp");
             rd.forward(req,res);
         }
         else{
