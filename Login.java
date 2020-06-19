@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 
 public class Login {
     Logger logger = Logger.getLogger(AdminMenu.class.getName());
-    UI uiLogin = new UI();
     SqlMethod sqlmethod = new SqlMethod();
     
     /**
