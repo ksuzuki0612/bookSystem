@@ -9,7 +9,7 @@
 <h2>4.戻る</h2>
 
 <form action="UserMenu" method="POST">
-    <input name="str" type="text">
+    <input name="str" type="number">
     <input type="submit">
 </form>
 

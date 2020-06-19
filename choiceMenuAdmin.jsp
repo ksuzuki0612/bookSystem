@@ -9,7 +9,7 @@
 <h2>4.終了</h2>
 
 <form action="MainMenuS" method="POST">
-    <input name="choiceAdmin" type="text">
+    <input name="choiceAdmin" type="number">
     <input type="submit">
 </form>
 

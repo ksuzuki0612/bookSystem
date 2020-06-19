@@ -12,7 +12,7 @@
 <h2>メニュー番号を入力してください</h2>
 
 <form action="MainMenuS" method="POST">
-    <input name="selectedAdmin" type="text">
+    <input name="selectedAdmin" type="number">
     <input type="submit">
 </form>
 
