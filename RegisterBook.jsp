@@ -1,78 +1,32 @@
-﻿<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-
+<%@ page contentType="text/html; charset=UTF-8"%>
 <html>
-<head>
-	<title>RegisterBook</title>
-</head>
-
 <body>
 
-	<h1>ISBNを入力してください</h1>
+<h1>書籍の各項目を入力してください。</h1>
 
-    <%String isbn = (String)request.getParameter("isbn");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="isbn" type="text">
-    	<input type="submit">
-    </form>
-    	
-    <h1>書籍名を入力してください</h1>
-
-    <%String title = (String)request.getParameter("title");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="title" type="text">
-    	<input type="submit">
-    </form>
-    	
-    <h1>出版社を入力してください</h1>
-
-    <%String publisher = (String)request.getParameter("publisher");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="publisher" type="text">
-    	<input type="submit">
-    </form>
-    	
-    <h1>出版日を入力してください</h1>
-
-    <%String strDate = (String)request.getParameter("strDate");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="strDate" type="text">
-    	<input type="submit">
-    </form>
-    	
-    <h1>分野を入力してください</h1>
-
-    <%String field = (String)request.getParameter("field");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="field" type="text">
-    	<input type="submit">
-    </form>
-    	
-    <h1>著者を入力してください</h1>
-
-    <%String str4 = (String)request.getParameter("str4");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="str4" type="text">
-    	<input type="submit">
-    </form>
-    	
-    <h1>在庫数を入力してください</h1>
-
-    <%String inventory = (String)request.getParameter("inventory");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="inventory" type="text">
-    	<input type="submit">
-    </form>
-    	
-    <h1>貸出数を入力してください</h1>
-
-    <%String borrowedAmountUi = (String)request.getParameter("borrorwedAmountUi");%> 
-    <form action="AdminMenu" method="POST">
-    	<input name="borrowedAmountUi" type="text">
-    	<input type="submit">
-    </form>
+<form action="RegisterBookServlet" method="POST">
+    <h2>出版日(yyyyMMdd)</h2>
+    <input name="regPubdate" type="text">
+    <input type="submit">
+    <h2>著者(複数の場合「、」で分けてください)</h2>
+    <input name="regAuthor" type="text">
+    <input type="submit">
+    <h2>ISBN</h2>
+    <input name="regISBN" type="text">
+    <input type="submit">
+    <h2>タイトル</h2>
+    <input name="regTitle" type="text">
+    <input type="submit">
+    <h2>出版社</h2>
+    <input name="regPublisher" type="text">
+    <input type="submit">
+    <h2>分野</h2>
+    <input name="regCategory" type="text">
+    <input type="submit">
+    <h2>在庫数</h2>
+    <input name="regInv" type="text">
+    <input type="submit">
+</form>
 
 </body>
 </html>
