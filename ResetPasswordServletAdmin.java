@@ -7,7 +7,6 @@ public class ResetPasswordServletAdmin extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
     throws ServletException,IOException{
         ResetPassword pass = new ResetPassword();
-
         int ans = req.getParameter("ans");
 
         if(ans == 1){
