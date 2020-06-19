@@ -23,13 +23,9 @@ public class ResetPasswordServlet extends HttpServlet{
             req.setAttribute("result",result);
             RequestDispatcher rd = req.getRequestDispatcher("/resultChangePassUser.jsp");
             rd.forward(req,res);
-
         }
         else{
             res.sendRedirect("choiceUserMenuUI.jsp");
         }
-
-
-
     }
 }

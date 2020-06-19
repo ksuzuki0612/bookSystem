@@ -13,6 +13,5 @@
 %>
 
 <a href="choiceMenuAdmin.jsp">メニュー画面に戻る</a>
-
 </body>
 </html>

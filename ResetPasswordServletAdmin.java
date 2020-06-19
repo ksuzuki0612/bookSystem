@@ -27,8 +27,5 @@ public class ResetPasswordServlet extends HttpServlet{
         else{
             res.sendRedirect("choiceAdminMenuUI.jsp");
         }
-
-
-
     }
 }
