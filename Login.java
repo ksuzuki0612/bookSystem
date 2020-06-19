@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  */
 
 public class Login {
-    Logger logger = Logger.getLogger(AdminMenu.class.getName());
+    Logger logger = Logger.getLogger(Login.class.getName());
     SqlMethod sqlmethod = new SqlMethod();
     
     /**
@@ -24,8 +24,7 @@ public class Login {
             int empID = ID;
             String password = pass;
             final int checkID = sqlmethod.dbCheckLogin(empID,password);
-            int checkEmpID = checkResult(checkID);
-            return checkEmpID;
+            return checkID;
         }
         finally{
             logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
