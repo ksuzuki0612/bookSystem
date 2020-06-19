@@ -18,7 +18,6 @@ public class ResetPasswordServletUser extends HttpServlet{
 
             String newPassword =req.getParameter("newPassword"); 
             String checkPassword =req.getParameter("checkPassword");
-
             boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
 
             req.setAttribute("result",result);
