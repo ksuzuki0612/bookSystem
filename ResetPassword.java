@@ -14,15 +14,15 @@ public class ResetPassword{
         }
     }
 
-    public boolean checkLoginID(int ID){
+ /*   public boolean checkLoginID(int ID){
         int id = ID;
-        //int checkID = LibraryMain.loginID;
+ 
         if(id == checkID){
             return true;
         }else{
             return false;
         }
-    }
+    }*/
 }
 
 
