@@ -23,8 +23,8 @@ public class SqlMethod{
     final String url = "jdbc:mysql://localhost:3306/librarysystem" +
                         "?useUnicode=true&useJDBCCompliantTimezoneShift" +
                         "=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    final String userName = "MateEngler";
-    final String pwd = "keyblade24";
+    final String userName = "*";
+    final String pwd = "*";
 
     public void InitializeDriver() {
         try {
@@ -42,9 +42,9 @@ public class SqlMethod{
      *
      */
 
-    public void registerBook(String ISBN, String title, String publisher,
-                              String publishDate, String field, List<String> authors,
-                               int inventory, int borrowedAmount){
+    public boolean registerBook (String ISBN, String title, String publisher,
+                              String publishDate, String field, String authors,
+                               int inventory, int borrowedAmount)throws SQLException{
 
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
@@ -74,15 +74,17 @@ public class SqlMethod{
             Connection con = DriverManager.getConnection(url, userName, pwd);
             Statement st = con.createStatement();
             int count = st.executeUpdate(query);
-
+            
            
             st.close();
             con.close();
-            }catch(Exception e) { System.out.println(e);}
+            
+            return true;
+            }
 
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
-                }
+                    }
 
     }
     /**
@@ -94,7 +96,7 @@ public class SqlMethod{
 
      */
 
-     public boolean borrowBookCheck(String isbn){
+     public boolean borrowBookCheck(String isbn)throws SQLException{
 
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
     	
@@ -112,15 +114,16 @@ public class SqlMethod{
             ResultSet rs = st.executeQuery(query);
             rs.next();
             int isbncheck = rs.getInt(1);
+            st.close();
+            con.close();
             
             if(isbncheck == 0){
                 return false;
             }else{
                 return true;
             }            
-            st.close();
-            con.close();
-            }catch(Exception e) { System.out.println(e);}
+            
+            }
 
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
@@ -134,7 +137,7 @@ public class SqlMethod{
      * 
      * 
     */
-     public boolean borrowBook(String ISBN, int empID, String borrowFrom, String borrowTill){
+     public boolean borrowBook(String ISBN, int empID, String borrowFrom, String borrowTill)throws SQLException{
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
     	
         try{
@@ -191,13 +194,12 @@ public class SqlMethod{
                                 " ISBN='" + ISBN + "'";
                 Statement st4 = con.createStatement();
                 int count2 = st4.executeUpdate(query4);
-
+                st.close();
+                con.close();
+                
                 return true;
+                }             
             }
-            st.close();
-            con.close(); 
-            
-            }catch(Exception e) { System.out.println(e);}
 
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
@@ -279,12 +281,36 @@ public class SqlMethod{
      * 書籍を著者ごと検索するメソッド
      *
      */
+    public boolean checkAuthor(String author)throws SQLException{
+        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
+        
+        try{
+            String query = "SELECT COUNT('author') FROM bookinfo"+
+                            " WHERE"+
+                            " author LIKE '%"+ author +"%'";
+            Connection con = DriverManager.getConnection(url, userName, pwd);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            rs.next();
+            int authorCount = rs.getInt(1);
+            st.close();
+            con.close();
+            
+            if (authorCount == 0){
+                return false;
+            }else{
+                return true;
+            }
+        }
+        finally{
+                logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
+            }
 
-    public List<Book> searchAuthor(){
+        }
+
+    
+    public List<Book> searchAuthor(String author){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("著者名を入力してください。");
-        String author = keyboard.nextLine();
         List<Book> books = new ArrayList<Book>();
         
         try{
@@ -300,25 +326,12 @@ public class SqlMethod{
                             " FROM bookinfo "+
                             "WHERE"+
                             " author LIKE '%"+ author +"%'";
-            String query2 = "SELECT COUNT('author') FROM bookinfo"+
-                            " WHERE"+
-                            " author LIKE '%"+ author +"%'";
-
             
             Connection con = DriverManager.getConnection(url, userName, pwd);
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query);
-
-            Statement st2 = con.createStatement();
-            ResultSet rs2 = st2.executeQuery(query2);
-            rs2.next();
-            int authorCount = rs2.getInt(1);
+            ResultSet rs = st.executeQuery(query);   
             
-            if(authorCount == 0){
-                System.out.println("探している著者の本がありません。");
-            }else{
-
-                String bookData = "";
+            String bookData = "";
             
             while(rs.next()){
                 Book book = new Book(
@@ -332,7 +345,7 @@ public class SqlMethod{
                     rs.getInt(8));
                 books.add(book);
                }
-            }
+            
             st.close();
             con.close();
             
@@ -351,12 +364,33 @@ public class SqlMethod{
      * 書籍を分野ごと検索メソッド
      *
      */
+     public boolean checkField(String searchfield)throws SQLException{
+        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
-     public List<Book> searchField(){
+        try{
+            String query = "SELECT COUNT('category') FROM bookinfo"+
+                            " WHERE"+
+                            " category LIKE '%"+ searchfield +"%'";
+            Connection con = DriverManager.getConnection(url, userName, pwd);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            rs.next();
+            int categoryCount = rs.getInt(1);
+
+            if(categoryCount == 0){
+                return false;
+            }else{
+                return true;
+            }
+
+        }
+        finally{
+            logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
+        }
+
+     }
+     public List<Book> searchField(String searchfield){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("分野を入力してください。");
-        String searchField = keyboard.nextLine();
         List<Book> books = new ArrayList<Book>();
 
         try{
@@ -370,27 +404,13 @@ public class SqlMethod{
                             " borrowed"+
                             " FROM bookinfo "+
                             "WHERE"+
-                            " category LIKE '%"+ searchField +"%'";
-            String query2 = "SELECT COUNT('category') FROM bookinfo"+
-                            " WHERE"+
-                            " category LIKE '%"+ searchField +"%'";
-            
-
+                            " category LIKE '%"+ searchfield +"%'";
             
             Connection con = DriverManager.getConnection(url, userName, pwd);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query);
             
-            Statement st2 = con.createStatement();
-            ResultSet rs2 = st2.executeQuery(query2);
-            rs2.next();
-            int categoryCount = rs2.getInt(1);
-
-            if(categoryCount == 0){
-                System.out.println("探している分野の本がありません。");
-            }else{
-
-                String bookData = "";
+            String bookData = "";
 
             while(rs.next()){
                 Book book = new Book(
@@ -404,7 +424,7 @@ public class SqlMethod{
                     rs.getInt(8));
                 books.add(book);
                }
-            }
+            
             st.close();
             con.close();
             
@@ -422,15 +442,35 @@ public class SqlMethod{
      * 書籍をタイトルごと検索メソッド
      *
      */
+     public boolean checkTitle(String title)throws SQLException{
+        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
-     public List<Book> searchTitle(){
+        try{
+            String query =  "SELECT COUNT('title') FROM bookinfo"+
+                            " WHERE"+
+                            " title LIKE '%"+ title + "%'";
+            Connection con = DriverManager.getConnection(url, userName, pwd);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            rs.next();
+            int titleCount = rs.getInt(1);
+
+            if(titleCount == 0){
+                return false;
+            }else{
+                return true;
+            }
+        }
+            finally{
+                    logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
+        }
+
+     }
+     public List<Book> searchTitle(String title){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("タイトルを入力してください。");
-        String searchtitle = keyboard.nextLine();
         List<Book> books = new ArrayList<Book>();
-        //keyboard.close();
+
 
         try{
             String query = "SELECT ISBN, "+
@@ -443,26 +483,11 @@ public class SqlMethod{
                             " borrowed"+
                             " FROM bookinfo "+
                             " WHERE"+
-                            " title LIKE '%"+ searchtitle +"%'";
-            String query2 = "SELECT COUNT('title') FROM bookinfo"+
-                            " WHERE"+
-                            " title LIKE '%"+ searchtitle +"%'";
-
+                            " title LIKE '%"+ title + "%'";
             
             Connection con = DriverManager.getConnection(url, userName, pwd);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query);
-            
-            Statement st2 = con.createStatement();
-            ResultSet rs2 = st2.executeQuery(query2);
-            rs2.next();
-            int titleCount = rs2.getInt(1);
-
-            if(titleCount == 0){
-                System.out.print("探している本がありません。");
-            }else{
-
-                //String bookData = "";
 
             while(rs.next()){
                 Book book = new Book(
@@ -475,7 +500,7 @@ public class SqlMethod{
                     rs.getInt(7),
                     rs.getInt(8));
                 books.add(book);
-              }
+              
             }
             st.close();
             con.close();
@@ -542,7 +567,7 @@ public class SqlMethod{
 
     }
 
-    public boolean deleteBook(String isbn){
+    public boolean deleteBook(String isbn) throws SQLException{
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
         
         try{
@@ -575,7 +600,7 @@ public class SqlMethod{
                 return true;
             
             }                       
-                }catch(Exception e) { System.out.println(e);}
+                }
 
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
