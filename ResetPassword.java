@@ -1,6 +1,4 @@
 public class ResetPassword{
-    static AdminMenu adminMenu = new AdminMenu();
-    static UserMenu userMenu = new UserMenu();
     SqlMethod sqlmethod = new SqlMethod();
 
 

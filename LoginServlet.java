@@ -9,7 +9,7 @@ public class LoginServlet extends HttpServlet{
         final Login login = new Login();
 
         final String strID = req.getParameter("empID");
-        empID = Integer.parseInt(strID);
+        int empID = Integer.parseInt(strID);
         final String password = req.getParmeter("password");
 
         final int ID = login.loginCheck(empID, password);
