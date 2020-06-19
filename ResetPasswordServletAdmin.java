@@ -4,15 +4,18 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class ResetPasswordServletAdmin extends HttpServlet{
+    ResetPassword pass = new ResetPassword();
+
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
     throws ServletException,IOException{
-        ResetPassword pass = new ResetPassword();
-        int ans = req.getParameter("ans");
+        
+        String ansStr = req.getParameter("ans");
+        int ans = Integer.parseInt(ansStr); 
 
         if(ans == 1){
             res.sendRedirect("PassResultUI.jsp");
             String strID =req.getParameter("empID");
-            empID =Integer.parseInt(strID);
+            int empID =Integer.parseInt(strID);
 
             String newPassword =req.getParameter("newPassword"); 
             String checkPassword =req.getParameter("checkPassword");
