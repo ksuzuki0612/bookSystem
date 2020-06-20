@@ -3,7 +3,7 @@
 <body>
 
 <%
-  boolean pass = (boolean)request.getAttribute("result");
+  boolean pass = (boolean)session.getAttribute("result");
   if(pass == true){
       out.println("パスワードが更新されました");
 

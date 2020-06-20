@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class ResetPasswordServletAdmin extends HttpServlet{
     protected void doPost(final HttpServletRequest req, final HttpServletResponse res)
@@ -23,9 +24,9 @@ public class ResetPasswordServletAdmin extends HttpServlet{
             final String checkPassword = req.getParameter("checkPassword");
             final boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
 
-            ServletContext sc = getServletContext();
-            RequestDispatcher rd = sc.getRequestDispatcher("/resultChangePassAdmin.jsp");
-            rd.forward(req,res);
+            HttpSession session = req.getSession();
+            session.setAttribute("result", result);
+            res.sendRedirect("resultChangePassAdmin.jsp");
         }
         else{
             res.sendRedirect("choiceAdminMenuUI.jsp");
