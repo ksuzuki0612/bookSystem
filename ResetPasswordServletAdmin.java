@@ -15,7 +15,6 @@ public class ResetPasswordServletAdmin extends HttpServlet{
 
         res.setContentType("text/html;charset=UTF8");
         PrintWriter out = res.getWriter();
-        
         final ResetPassword pass = new ResetPassword();
         final String ansStr = req.getParameter("ans");
         final int ans = Integer.parseInt(ansStr);
