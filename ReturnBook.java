@@ -16,7 +16,7 @@ public class ReturnBook extends HttpServlet {//[2]
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {//[3]
         response.setContentType("text/html; charset=Shift_JIS");//[4]
-        int str = request.getParameter("employeeUi");
+        String str = request.getParameter("employeeUi");
         int employeeUi = Integer.parseInt(str);
         String isbnUi = request.getParameter("isbnUi");//[6]
         this.returnbooks(employeeUi,isbnUi);
@@ -24,7 +24,7 @@ public class ReturnBook extends HttpServlet {//[2]
 
     private void returnbooks(int employeeUi, String isbnUi) {
         //    	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-             sql.returnBook(employeeUi,isbnUi);
+             sql.returnBook(isbnUi,employeeUi);
 //        logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
     }
 
