@@ -1,5 +1,4 @@
 public class ResetPassword{
-	
     SqlMethod sqlmethod = new SqlMethod();
 
     public boolean checkResetPass(final int ID,final String pass,final String checkPass){
