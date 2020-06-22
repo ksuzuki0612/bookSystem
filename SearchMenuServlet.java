@@ -19,7 +19,7 @@ public class SearchMenuServlet extends HttpServlet{
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         SqlMethod sql = new SqlMethod();
-	int selected = request.getParameter(""); //???
+	int selected = request.getParameter("str"); 
         try{
             if(selected ==1){
             	RequestDispatcher dispatch = request.getRequestDispatcher("SearchTitle.jsp");
@@ -36,24 +36,7 @@ public class SearchMenuServlet extends HttpServlet{
             else{
                 return;
             }
-            System.out.println(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
-            "ISBN","Title","Publisher","Publishdate","Author","category","Inventory","Lent out"));
-            for(Book t : titleList){
-                System.out.println(  String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
-                    t.getISBN() ,t.getTitle() , t.getPublisher() ,
-                    new SimpleDateFormat("yyyy/MM/dd").format(t.getPublishDate()),
-                    t.getStringAuthors() , t.getField() , t.getInventory(),
-                    t.getBorrowedAmount() ));
-            }
-
-            int select = request.getParameter("s1");
             
-            if(select == 1){
-                String saveFile =request.getParameter("saveFileName");
-                this.saveBooks(saveFile,titleList);
-                RequestDispatcher dispatch = request.getRequestDispatcher("SaveApproval.jsp");
-		        dispatch.forward(request, response);
-            }
         }
         catch(Exception e){
             logger.severe("SEVERE");
