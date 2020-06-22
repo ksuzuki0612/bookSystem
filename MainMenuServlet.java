@@ -72,16 +72,16 @@ public class MainMenuServlet extends HttpServlet{
         PrintWriter out = response.getWriter();
         switch (selectedAdminInt) {
             case AdminMenuNum.RegisterBook:
-                registerBookServlet.doPost();
+                registerBookServlet.doPost(request,response);
                 break;
             case AdminMenuNum.DeleteBook:
-                deleteBookServlet.doPost(req,res);
+                deleteBookServlet.doPost(request,response);
                 break;
             case AdminMenuNum.ChangeBookInfo:
-                updataBook.doGet();
+                updataBook.doGet(request,response);
                 break;
             case AdminMenuNum.LoanAproval:
-                borrowBookServlet.doPost(req,res);
+                borrowBookServlet.doPost(request,response);
                 break;
             case AdminMenuNum.ReturnApplication:
                 returnBook.doGet(request,response);
@@ -108,7 +108,7 @@ public class MainMenuServlet extends HttpServlet{
                 if (sbInt == 1) {
                 break;
                 }else {
-                    res.sendRedirect("userMenu.jsp");
+                    response.sendRedirect("userMenu.jsp");
                     String str = request.getParameter("str");
                     int strInt = Integer.parseInt(str);
                     userMenu.searchBooks(strInt);
