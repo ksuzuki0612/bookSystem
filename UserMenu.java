@@ -18,8 +18,9 @@ public class UserMenu extends HttpServlet{
     SqlMethod sql =new SqlMethod();
     List<Book> titleList = new ArrayList<>();
     UI ui =new UI();
+	}
     
-    private int errorNum = 0;
+    final int errorNum = 0;
     
     public void searchBooks(int selected) {
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
