@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>探している著者の本がありません。</h1>
+<h1>探している著者の書籍がありません。</h1>
 <h1>著者名を再入力してください。</h1>
 
 <form action="AuthorCheckServlet" method="POST">

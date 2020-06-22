@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>削除したい本がありません。</h1>
+<h1>削除したい書籍がありません。</h1>
 <h1>ISBNを再入力してください。</h1>
 
 <form action="DeleteBookServlet" method="POST">

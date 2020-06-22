@@ -18,10 +18,11 @@ public class RegisterBookServlet extends HttpServlet{
         String title = req.getParameter("regTitle");
         String publisher = req.getParameter("regPublisher");
         String category = req.getParameter("regCategory");
-        int inventory = req.getParameter("regInv");
+        String inventory = req.getParameter("regInv");
+        int inv = Integer.parseInt(inventory);
         int borrowedAmount = 0;
         
-        boolean register = sql.registerBook(pubdate, authors, isbn, title, publisher, category, inventory, borrowedAmount);
+        boolean register = sql.registerBook(pubdate, authors, isbn, title, publisher, category, inv, borrowedAmount);
 
         if(register == true){
             res.sendRedirect("bookregistered.jsp");
