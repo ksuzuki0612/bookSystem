@@ -1,4 +1,5 @@
 public class ResetPassword{
+	
     SqlMethod sqlmethod = new SqlMethod();
 
 	@WebServlet("/ResetPassword")

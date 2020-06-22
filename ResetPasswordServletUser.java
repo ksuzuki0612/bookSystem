@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebServlet("ResetPasswordServletUser")
 public class ResetPasswordServletUser extends HttpServlet{
-    
     protected void doPost(final HttpServletRequest req,final HttpServletResponse res)
     throws ServletException,IOException{
         final ResetPassword pass = new ResetPassword();
