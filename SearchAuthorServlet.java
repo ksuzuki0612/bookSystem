@@ -14,7 +14,7 @@ public class SearchAuthorServlet extends HttpServlet{
 
         String author = req.getParameter("searchAuthor");
         
-        boolean delete = sql.deleteBook(isbn);
+        boolean delete = sql.deleteBook(author);
 
         if(delete == false){
             res.sendRedirect("nobook.jsp");
