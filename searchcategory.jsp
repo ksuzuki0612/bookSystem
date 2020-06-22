@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
 <body>
-
 <h1>分野を入力してください。</h1>
 
 <form action="CategoryCheckServlet" method="POST">
