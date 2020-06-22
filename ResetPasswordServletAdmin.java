@@ -29,7 +29,7 @@ public class ResetPasswordServletAdmin extends HttpServlet{
             res.sendRedirect("resultChangePassAdmin.jsp");
         }
         else{
-            res.sendRedirect("choiceAdminMenuUI.jsp");
+            out.println("<a href=" + "choiceAdminMenuUI.jsp" + ">メニュー画面へ戻る</a>");
         }
     }
 }
