@@ -2,8 +2,9 @@ import java.io.*;
 import java.net.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 
-@webServlet("/MainMenuServlet")
+@WebServlet("/MainMenuServlet")
 public class MainMenuServlet extends HttpServlet{
     UserMenu userMenu = new UserMenu();
     RegisterBookServlet registerBookServlet = new RegisterBookServlet();
