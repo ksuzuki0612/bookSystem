@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class SearchBooksServlet extends HttpServlet{
-    Logger logger = Logger.getLogger(SearchBooks.class.getName());
+    Logger logger = Logger.getLogger(SearchBooksServlet.class.getName());
     List<Book> titleList = new ArrayList<>();
     final int errorNum = 0;
     public void doGet(HttpServletRequest request, HttpServletResponse response)
