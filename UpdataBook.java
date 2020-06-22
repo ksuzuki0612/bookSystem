@@ -9,32 +9,31 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.logging.Logger;
  
-@WebServlet("/returnBook")//[1]
-public class ReturnBook extends HttpServlet {//[2]
-	Logger logger = Logger.getLogger(AdminMenu.class.getName());
+@WebServlet("/UpdataBook")//[1]
+public class UpdataBook extends HttpServlet {//[2]
+	Logger logger = Logger.getLogger(UpdataBook.class.getName());
 	SqlMethod sql =new SqlMethod();
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {//[3]
         response.setContentType("text/html; charset=Shift_JIS");//[4]
-        int selected = request.getParameter("selectedUi");//[5]
-        PrintWriter out = response.getWriter();//[7]
-        out.println("<html><head></head><body>");//[8]
-        out.println("<form action="MainMenuS" method="POST">")
-        <input name="selectedUi" type="text">
-        <input type="submit">
-         </form>
-        out.println("</body></html>");//[12]
-    }
-     
-        this.returnbook(employeeUi,isbnUi);
+        String str = request.getParameter("selectedUi");
+         int selected = Integer.parseInt(str);
+        if(selected == 1){
+            res.sendRedirect("updataBook1.jsp");
+        }
+        if(selected == 2){
+            res.sendRedirect("updataBook2.jsp"); 
+        }
+        else{
+        }
+
     }
 }
 
-
-      public void updataBook(){
+      public int updataBook(int selected){
           logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
           loop:while (true){
-			int selected = ui.selectedUi();
+
 		    switch(selected){
 			    case 1:
                     String allowISBN = ui.isbnUi();
@@ -50,7 +49,7 @@ public class ReturnBook extends HttpServlet {//[2]
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
                     break loop;
                 default:
-                    System.out.println("再度入力してください");
+//                    System.out.println("再度入力してください");
                     break;
             }
         }    
