@@ -33,9 +33,8 @@ public class MainMenuServlet extends HttpServlet{
                 adminMainMenu();
                 break;
             case FeaturesMenu.ResetPass:
-                RequestDispatcher dispatch =
-                request.getRequestDispatcher("resetPassUIAdmin.jsp");
-                dispatch.forward(request, response);
+                out.println("<a href=" + "resetPassUIAdmin.jsp" + ">パスワード再設定画面</a>");
+                
                 break;
             case FeaturesMenu.EndProgram:
                 out.println("終了");
@@ -57,9 +56,7 @@ public class MainMenuServlet extends HttpServlet{
                 out.println("管理者権限がありません");
                 break;
             case FeaturesMenu.ResetPass:
-                RequestDispatcher dispatch =
-                request.getRequestDispatcher("resetPassUIUser.jsp");
-                dispatch.forward(request, response);
+               	out.println("<a href=" + "resetPassUIUser.jsp" + ">パスワード再設定画面</a>");
                 break;
             case FeaturesMenu.EndProgram:
                 out.println("終了");
