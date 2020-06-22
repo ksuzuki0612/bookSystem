@@ -17,7 +17,7 @@ public class TitleCheckServlet extends HttpServlet{
         boolean findtitle = sql.checkTitle(title);
 
         if(findtitle == false){
-            res.sendRedirect("notitle.jsp");
+            out.println("探しているタイトルの書籍がありません。");
         }else {
             sql.searchTitle(title);
         }

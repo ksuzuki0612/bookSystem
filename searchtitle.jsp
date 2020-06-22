@@ -4,7 +4,7 @@
 
 <h1>タイトルを入力してください。。</h1>
 
-<form action="TitleCheckServlet" method="POST">
+<form action="SearchTitleServlet" method="POST">
     <h2>タイトル</h2>
     <input name="searchtitle" type="text">
     <input type="submit">
