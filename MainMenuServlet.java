@@ -3,6 +3,7 @@ import java.net.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+@webServlet("/MainMenuServlet")
 public class MainMenuServlet extends HttpServlet{
     UserMenu userMenu = new UserMenu();
     RegisterBookServlet registerBookServlet = new RegisterBookServlet();
@@ -15,11 +16,12 @@ public class MainMenuServlet extends HttpServlet{
 		throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
 
-        int choiceAdmin = request.getParameter("choiceAdmin");
+        String choiceAdmin = request.getParameter("choiceAdmin");
+        int choiceAdminInt = Integer.parseInt(choiceAdmin);
 
         PrintWriter out = response.getWriter();
 
-        switch (choiceAdmin) {
+        switch (choiceAdminInt) {
             case FeaturesMenu.UserMenu:
                 RequestDispatcher dispatch =
                 request.getRequestDispatcher("userMenuUI.jsp");
@@ -44,8 +46,9 @@ public class MainMenuServlet extends HttpServlet{
                 out.println("再度入力してください");
             }
             
-        int choiceUser = request.getParameter("choiceUser");
-        switch (choiceUser) {
+        String choiceUser = request.getParameter("choiceUser");
+        int choiceUserInt = Integer.parseInt(choiceUser);
+        switch (choiceUserInt) {
             case FeaturesMenu.UserMenu:
                 RequestDispatcher dispatch =
                 request.getRequestDispatcher("userMenuUI.jsp");
@@ -69,9 +72,10 @@ public class MainMenuServlet extends HttpServlet{
         
     public void adminMainMenu(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException{
-        int selectedAdmin = request.getParameter("selectedAdmin");
-        int rb = request.getParameter("returnMainMenu");
-        switch (selectedAdmin) {
+        String selectedAdmin = request.getParameter("selectedAdmin");
+        int selectedAdminInt = Integer.parseInt(selectedAdmin);
+        String rb = request.getParameter("returnMainMenu");
+        switch (selectedAdminInt) {
             case AdminMenuNum.RegisterBook:
                 registerBookServlet.doPost();
                 break;
@@ -97,19 +101,22 @@ public class MainMenuServlet extends HttpServlet{
 
     public void userMainMenu(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException{
-        final int selectedUser = request.getParameter("selectedUser");
+        final String selectedUser = request.getParameter("selectedUser");
         HttpSession session = request.getSession();
         session.setAttribute("selectedUser",selectedUser);
-        switch(selectedUser){
+        int selectedUserInt = Integer.parseInt(selectedUser);
+        switch(selectedUserInt){
             case UserMenuNum.SearchBook:
-                final int sb = request.getParameter("returnMainMenu");
-                if (sb == 1) {
+                final String sb = request.getParameter("returnMainMenu");
+                int sbInt = Integer.parseInt(sb);
+                if (sbInt == 1) {
                 break;
                 }else {
                     RequestDispatcher dispatch =
                     request.getRequestDispatcher("userMenu.jsp");
                     dispatch.forward(request, response);
-                    int str = request.getParameter("str");
+                    String str = request.getParameter("str");
+                    int strInt = Integer.parseInt(str);
                     userMenu.searchBooks(str);
                     break;
                 }
