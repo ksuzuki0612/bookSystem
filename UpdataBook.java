@@ -28,12 +28,11 @@ public class UpdataBook extends HttpServlet {//[2]
         }
 
     }
-}
 
-      public int updataBook(int selected){
-          logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-          loop:while (true){
 
+    public int updataBook(int selected){
+        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
+        loop:while (true){
 		    switch(selected){
 			    case 1:
                     String allowISBN = ui.isbnUi();
@@ -54,3 +53,4 @@ public class UpdataBook extends HttpServlet {//[2]
             }
         }    
     }
+}
