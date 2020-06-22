@@ -19,10 +19,10 @@ public class UpdataBook extends HttpServlet {//[2]
         String str = request.getParameter("selectedUi");
          int selected = Integer.parseInt(str);
         if(selected == 1){
-            res.sendRedirect("updataBook1.jsp");
+            response.sendRedirect("updataBook1.jsp");
         }
         if(selected == 2){
-            res.sendRedirect("updataBook2.jsp"); 
+            response.sendRedirect("updataBook2.jsp"); 
         }
         else{
         }
@@ -30,27 +30,4 @@ public class UpdataBook extends HttpServlet {//[2]
     }
 
 
-    public int updataBook(int selected){
-        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-        loop:while (true){
-		    switch(selected){
-			    case 1:
-                    String allowISBN = ui.isbnUi();
-                    int addInventory = ui.addInventoryUi();
-                    sql.dbUpdataInventory( allowISBN,addInventory );
-                    break;
-                case 2:
-                    String aISBN = ui.isbnUi();
-                    int addBorrowedAmount =ui.addBorrowedAmountUi();
-                    sql.dbAddBorrowedAmount( aISBN,addBorrowedAmount);
-                    break;
-                case 3:
-                    logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
-                    break loop;
-                default:
-//                    System.out.println("再度入力してください");
-                    break;
-            }
-        }    
-    }
 }
