@@ -23,11 +23,11 @@ public class MainMenuServlet extends HttpServlet{
 
         switch (choiceAdminInt) {
             case FeaturesMenu.UserMenu:
-                res.sendRedirect("userMenuUI.jsp");
+                response.sendRedirect("userMenuUI.jsp");
                 userMainMenu(request,response);
                 break;
             case FeaturesMenu.AdminMenu:
-                res.sendRedirect("adminMenuUI.jsp");
+                response.sendRedirect("adminMenuUI.jsp");
                 adminMainMenu(request,response);
                 break;
             case FeaturesMenu.ResetPass:
@@ -46,7 +46,7 @@ public class MainMenuServlet extends HttpServlet{
         int choiceUserInt = Integer.parseInt(choiceUser);
         switch (choiceUserInt) {
             case FeaturesMenu.UserMenu:
-                res.sendRedirect("userMenuUI.jsp");
+                response.sendRedirect("userMenuUI.jsp");
                 userMainMenu(request,response);
                 break;
             case FeaturesMenu.AdminMenu:
@@ -75,16 +75,16 @@ public class MainMenuServlet extends HttpServlet{
                 registerBookServlet.doPost();
                 break;
             case AdminMenuNum.DeleteBook:
-                deleteBookServlet.doPost();
+                deleteBookServlet.doPost(req,res);
                 break;
             case AdminMenuNum.ChangeBookInfo:
                 updataBook.doGet();
                 break;
             case AdminMenuNum.LoanAproval:
-                borrowBookServlet.doPost();
+                borrowBookServlet.doPost(req,res);
                 break;
             case AdminMenuNum.ReturnApplication:
-                returnBook.doGet();
+                returnBook.doGet(request,response);
                 break;
             case AdminMenuNum.ReturnProgram:
                 out.println("6,戻る");
