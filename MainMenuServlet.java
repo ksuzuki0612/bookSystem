@@ -23,16 +23,12 @@ public class MainMenuServlet extends HttpServlet{
 
         switch (choiceAdminInt) {
             case FeaturesMenu.UserMenu:
-                RequestDispatcher dispatch =
-                request.getRequestDispatcher("userMenuUI.jsp");
-                dispatch.forward(request, response);
-                userMainMenu();
+                res.sendRedirect("userMenuUI.jsp");
+                userMainMenu(request,response);
                 break;
             case FeaturesMenu.AdminMenu:
-                RequestDispatcher dispatch =
-                request.getRequestDispatcher("adminMenuUI.jsp");
-                dispatch.forward(request, response);
-                adminMainMenu();
+                res.sendRedirect("adminMenuUI.jsp");
+                adminMainMenu(request,response);
                 break;
             case FeaturesMenu.ResetPass:
                 out.println("<a href=" + "resetPassUIAdmin.jsp" + ">パスワード再設定画面</a>");
@@ -50,10 +46,8 @@ public class MainMenuServlet extends HttpServlet{
         int choiceUserInt = Integer.parseInt(choiceUser);
         switch (choiceUserInt) {
             case FeaturesMenu.UserMenu:
-                RequestDispatcher dispatch =
-                request.getRequestDispatcher("userMenuUI.jsp");
-                dispatch.forward(request, response);
-                userMainMenu();
+                res.sendRedirect("userMenuUI.jsp");
+                userMainMenu(request,response);
                 break;
             case FeaturesMenu.AdminMenu:
                 out.println("管理者権限がありません");
@@ -114,9 +108,7 @@ public class MainMenuServlet extends HttpServlet{
                 if (sbInt == 1) {
                 break;
                 }else {
-                    RequestDispatcher dispatch =
-                    request.getRequestDispatcher("userMenu.jsp");
-                    dispatch.forward(request, response);
+                    res.sendRedirect("userMenu.jsp");
                     String str = request.getParameter("str");
                     int strInt = Integer.parseInt(str);
                     userMenu.searchBooks(strInt);
