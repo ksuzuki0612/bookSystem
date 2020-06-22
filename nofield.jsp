@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>探している分野の本がありません。</h1>
+<h1>探している分野の書籍がありません。</h1>
 <h1>分野を再入力してください。</h1>
 
 <form action="CategoryCheckServlet" method="POST">

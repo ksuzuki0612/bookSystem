@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>Enter the ISBN of the book you wish to delete.</h1>
+<h1>削除したい書籍のISBNを入力してください。</h1>
 
 <form action="DeleteBookServlet" method="POST">
     <h2>ISBN</h2>
