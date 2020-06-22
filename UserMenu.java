@@ -54,7 +54,7 @@ public class UserMenu extends HttpServlet{
                     t.getStringAuthors() , t.getField() , t.getInventory(),
                     t.getBorrowedAmount() ));
             }
-            select = request.getParameter("select");
+            int select = request.getParameter("select");
             if(select == 1){
                 this.saveBooks(saveFile,titleList);
             }
