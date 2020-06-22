@@ -26,6 +26,7 @@ public class UserMenu extends HttpServlet{
     public void searchBooks(int selected) {
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
         try{
+		String[] selected = request.getParameterValues("selected");
             if(selected ==1){
                 RequestDispatcher dispatcher = request.getRequestDispatcher
     	("/servlet/dispatch.searchTitle");
