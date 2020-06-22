@@ -14,10 +14,11 @@ public class BorrowBookServlet extends HttpServlet{
 
         String ISBN = req.getParameter("ISBN");
         String empID = req.getParameter("empID");
+        int eid = Integer.parseInt(empID);
         String borrowFrom = req.getParameter("borrowFrom");
         String borrowTill = req.getParameter("borrowTill");
         
-        boolean borrowBook = sql.borrowBook(ISBN, empID, borrowFrom, borrowTill);
+        boolean borrowBook = sql.borrowBook(ISBN, eid, borrowFrom, borrowTill);
 
         if(borrowBook == false){
             res.sendRedirect("employeecannotborrow.jsp");

@@ -19,7 +19,7 @@ import java.text.*;
 
 public class SqlMethod{
 
-    Logger logger = Logger.getLogger(AdminMenu.class.getName());
+    Logger logger = Logger.getLogger(SqlMethod.class.getName());
     final String url = "jdbc:mysql://localhost:3306/librarysystem" +
                         "?useUnicode=true&useJDBCCompliantTimezoneShift" +
                         "=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
