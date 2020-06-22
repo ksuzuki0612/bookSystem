@@ -40,7 +40,7 @@ public class SearchMenuServlet extends HttpServlet{
                     t.getStringAuthors() , t.getField() , t.getInventory(),
                     t.getBorrowedAmount() ));
             }
-            int select = ui.saveApproval();
+            int select = request.getParameter("saveApproval.jsp")
             if(select == 1){
                 String saveFile =request.getParameter("saveFileName");
                 this.saveBooks(saveFile,titleList);
