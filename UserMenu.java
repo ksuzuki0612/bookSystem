@@ -21,7 +21,7 @@ public class UserMenu extends HttpServlet{
     
 	}
     
-    final int errorNum = 0;
+    int errorNum = 0;
     
     public void searchBooks(int selected) {
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
