@@ -12,21 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 public class SearchMenuServlet extends HttpServlet{
     Logger logger = Logger.getLogger(SearchMenuServlet.class.getName());
     List<Book> titleList = new ArrayList<>();
-    final int errorNum = 0;
+    int errorNum = 0;
     public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException{
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        SqlMethod sql =new SqlMethod();
+        SqlMethod sql = new SqlMethod();
         try{
             if(selected ==1){
-            	response.sendRedirect("userMenu.jsp");
+            	RequestDispatcher dispatch = request.getRequestDispatcher("SearchTitle.jsp");
+		        dispatch.forward(request, response);
             }
             else if(selected ==2){
-            	//out.println
+            	RequestDispatcher dispatch = request.getRequestDispatcher("SearchAuthor.jsp");
+		        dispatch.forward(request, response);
             }
             else if(selected ==3){
-                //out.println
+                RequestDispatcher dispatch = request.getRequestDispatcher("SearchCategory.jsp");
+		        dispatch.forward(request, response);
             }
             else{
                 return;
@@ -40,10 +43,14 @@ public class SearchMenuServlet extends HttpServlet{
                     t.getStringAuthors() , t.getField() , t.getInventory(),
                     t.getBorrowedAmount() ));
             }
-            int select = request.getParameter("saveApproval.jsp")
+
+            int select = request.getParameter("s1");
+            
             if(select == 1){
                 String saveFile =request.getParameter("saveFileName");
                 this.saveBooks(saveFile,titleList);
+                RequestDispatcher dispatch = request.getRequestDispatcher("SaveApproval.jsp");
+		        dispatch.forward(request, response);
             }
         }
         catch(Exception e){
