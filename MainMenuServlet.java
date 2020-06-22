@@ -75,6 +75,7 @@ public class MainMenuServlet extends HttpServlet{
         String selectedAdmin = request.getParameter("selectedAdmin");
         int selectedAdminInt = Integer.parseInt(selectedAdmin);
         String rb = request.getParameter("returnMainMenu");
+        PrintWriter out = response.getWriter();
         switch (selectedAdminInt) {
             case AdminMenuNum.RegisterBook:
                 registerBookServlet.doPost();
@@ -105,6 +106,7 @@ public class MainMenuServlet extends HttpServlet{
         HttpSession session = request.getSession();
         session.setAttribute("selectedUser",selectedUser);
         int selectedUserInt = Integer.parseInt(selectedUser);
+        PrintWriter out = response.getWriter();
         switch(selectedUserInt){
             case UserMenuNum.SearchBook:
                 final String sb = request.getParameter("returnMainMenu");
@@ -117,7 +119,7 @@ public class MainMenuServlet extends HttpServlet{
                     dispatch.forward(request, response);
                     String str = request.getParameter("str");
                     int strInt = Integer.parseInt(str);
-                    userMenu.searchBooks(str);
+                    userMenu.searchBooks(strInt);
                     break;
                 }
             case UserMenuNum.CancelReservation:
