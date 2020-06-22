@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/LoginServlet")
+
 public class LoginServlet extends HttpServlet{
-    protected void doPost(final HttpServletRequest req, final HttpServletResponse res)
+    public void doPost(final HttpServletRequest req, final HttpServletResponse res)
             throws ServletException, IOException{
+
         res.setContentType("text/html;charset=UTF8");
      	PrintWriter out = res.getWriter();
      	
@@ -22,6 +23,7 @@ public class LoginServlet extends HttpServlet{
      	
         final Login login = new Login();
 
+        
         final String strID = req.getParameter("empID");
         String password = req.getParameter("password");
         int intID = Integer.parseInt(strID);
