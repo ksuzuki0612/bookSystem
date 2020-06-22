@@ -2,6 +2,7 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 import java.text.*;
+import java.util.logging.Logger;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.RequestDispatcher;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class SaveBooksServlet extends HttpServlet{
     Logger logger = Logger.getLogger(SaveBooksServlet.class.getName());
     List<Book> titleList = new ArrayList<>();
-    final int errorNum = 0;
+    int errorNum = 0;
     public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException{
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
