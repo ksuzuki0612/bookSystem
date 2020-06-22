@@ -11,6 +11,9 @@ import javax.servlet.http.HttpSession;
 public class ResetPasswordServletUser extends HttpServlet{
     protected void doPost(final HttpServletRequest req,final HttpServletResponse res)
     throws ServletException,IOException{
+        res.setContentType("text/html;charset=UTF8");
+        PrintWriter out = res.getWriter();
+
         final ResetPassword pass = new ResetPassword();
         final String ansStr = req.getParameter("ans");
         final int ans = Integer.parseInt(ansStr);
