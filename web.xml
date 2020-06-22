@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+  version="4.0"
+  metadata-complete="true">
+
+  <servlet>
+	<servlet-name>ServletTest</servlet-name>
+	<servlet-class>ServletTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ServletTest</servlet-name>
+	<url-pattern>/ServletTest</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>LoginServlet</servlet-name>
+	<servlet-class>LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>LoginServlet</servlet-name>
+	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>AuthorCheckServlet</servlet-name>
+	<servlet-class>AuthorCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>AuthorCheckServlet</servlet-name>
+	<url-pattern>/AuthorCheckServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>BorrowBookServlet</servlet-name>
+	<servlet-class>BorrowBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>BorrowBookServlet</servlet-name>
+	<url-pattern>/BorrowBookServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>CategoryCheckServlet</servlet-name>
+	<servlet-class>CategoryCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>CategoryCheckServlet</servlet-name>
+	<url-pattern>/CategoryCheckServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>CheckBorrowServlet</servlet-name>
+	<servlet-class>CheckBorrowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>CheckBorrowServlet</servlet-name>
+	<url-pattern>/CheckBorrowServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>DeleteBookServlet</servlet-name>
+	<servlet-class>DeleteBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>DeleteBookServlet</servlet-name>
+	<url-pattern>/DeleteBookServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>MainMenuServlet</servlet-name>
+	<servlet-class>MainMenuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>MainMenuServlet</servlet-name>
+	<url-pattern>/MainMenuServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>RegisterBookServlet</servlet-name>
+	<servlet-class>RegisterBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>RegisterBookServlet</servlet-name>
+	<url-pattern>/RegisterBookServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>ResetPasswordServletAdmin</servlet-name>
+	<servlet-class>ResetPasswordServletAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ResetPasswordServletAdmin</servlet-name>
+	<url-pattern>/ResetPasswordServletAdmin</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>ResetPasswordServletUser</servlet-name>
+	<servlet-class>ResetPasswordServletUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ResetPasswordServletUser</servlet-name>
+	<url-pattern>/ResetPasswordServletUser</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>ReturnBook</servlet-name>
+	<servlet-class>ReturnBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ReturnBook</servlet-name>
+	<url-pattern>/ReturnBook</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>SearchAuthorServlet</servlet-name>
+	<servlet-class>SearchAuthorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SearchAuthorServlet</servlet-name>
+	<url-pattern>/SearchAuthorServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>TitleCheckServlet</servlet-name>
+	<servlet-class>TitleCheckServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>TitleCheckServlet</servlet-name>
+	<url-pattern>/TitleCheckServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>UpdataBook</servlet-name>
+	<servlet-class>UpdataBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdataBook</servlet-name>
+	<url-pattern>/UpdataBook</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>UpdataBook1</servlet-name>
+	<servlet-class>UpdataBook1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdataBook1</servlet-name>
+	<url-pattern>/UpdataBook1</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>UpdataBook2</servlet-name>
+	<servlet-class>UpdataBook2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdataBook2</servlet-name>
+	<url-pattern>/UpdataBook2</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>UserMenu</servlet-name>
+	<servlet-class>UserMenu</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UserMenu</servlet-name>
+	<url-pattern>/UserMenu</url-pattern>
+  </servlet-mapping>
+
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+  </description>
+
+</web-app>
