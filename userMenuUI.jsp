@@ -8,7 +8,7 @@
 <h2>3.戻る</h2>
 <h2>メニュー番号を入力してください</h2>
 
-<form action="MainMenuServlet" method="POST">
+<form action="FunctionUserServlet" method="POST">
     <input name="selectedUser" type="number">
     <input type="submit">
 </form>

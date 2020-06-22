@@ -11,7 +11,7 @@
 <h2>6.戻る</h2>
 <h2>メニュー番号を入力してください</h2>
 
-<form action="MainMenuServlet" method="POST">
+<form action="FunctionAdminServlet" method="POST">
     <input name="selectedAdmin" type="number">
     <input type="submit">
 </form>
