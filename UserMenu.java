@@ -26,7 +26,7 @@ public class UserMenu extends HttpServlet{
     public void searchBooks(int selected) {
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
         try{
-		int[] selected = request.getParameterValues("selected");
+		selected = request.getParameterValues("selected");
             if(selected ==1){
                 RequestDispatcher dispatcher = request.getRequestDispatcher
     	("/servlet/dispatch.searchTitle");
@@ -54,7 +54,7 @@ public class UserMenu extends HttpServlet{
                     t.getStringAuthors() , t.getField() , t.getInventory(),
                     t.getBorrowedAmount() ));
             }
-            int select = request.getParameter("select");
+            select = request.getParameter("select");
             if(select == 1){
                 this.saveBooks(saveFile,titleList);
             }
