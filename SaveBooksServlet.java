@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SaveBooks extends HttpServlet{
+public class SaveBooksServlet extends HttpServlet{
     Logger logger = Logger.getLogger(SaveBooks.class.getName());
     List<Book> titleList = new ArrayList<>();
     final int errorNum = 0;
