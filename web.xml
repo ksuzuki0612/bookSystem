@@ -23,30 +23,12 @@
   metadata-complete="true">
   
   <servlet>
-	<servlet-name>AuthorCheckServlet</servlet-name>
-	<servlet-class>AuthorCheckServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>AuthorCheckServlet</servlet-name>
-	<url-pattern>/AuthorCheckServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
 	<servlet-name>BorrowBookServlet</servlet-name>
 	<servlet-class>BorrowBookServlet</servlet-class>
   </servlet>
   <servlet-mapping>
 	<servlet-name>BorrowBookServlet</servlet-name>
 	<url-pattern>/BorrowBookServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-	<servlet-name>CategoryCheckServlet</servlet-name>
-	<servlet-class>CategoryCheckServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>CategoryCheckServlet</servlet-name>
-	<url-pattern>/CategoryCheckServlet</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -185,15 +167,6 @@
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>returnBook</servlet-name>
-	<servlet-class>returnBook</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>returnBook</servlet-name>
-	<url-pattern>/returnBook</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
 	<servlet-name>SearchAuthorServlet</servlet-name>
 	<servlet-class>SearchAuthorServlet</servlet-class>
   </servlet>
@@ -227,15 +200,6 @@
   <servlet-mapping>
 	<servlet-name>UpdateLendServlet</servlet-name>
 	<url-pattern>/UpdateLendServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-	<servlet-name>UserMenu</servlet-name>
-	<servlet-class>UserMenu</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>UserMenu</servlet-name>
-	<url-pattern>/UserMenu</url-pattern>
   </servlet-mapping>
 
   <display-name>Welcome to Tomcat</display-name>
