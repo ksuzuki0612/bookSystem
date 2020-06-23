@@ -23,15 +23,6 @@
   metadata-complete="true">
   
   <servlet>
-	<servlet-name>LoginServlet</servlet-name>
-	<servlet-class>LoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>LoginServlet</servlet-name>
-	<url-pattern>/LoginServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
 	<servlet-name>AuthorCheckServlet</servlet-name>
 	<servlet-class>AuthorCheckServlet</servlet-class>
   </servlet>
@@ -77,6 +68,33 @@
   </servlet-mapping>
 
   <servlet>
+	<servlet-name>FunctionAdminServlet</servlet-name>
+	<servlet-class>FunctionAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>FunctionAdminServlet</servlet-name>
+	<url-pattern>/FunctionAdminServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>FunctionUserServlet</servlet-name>
+	<servlet-class>FunctionUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>FunctionUserServlet</servlet-name>
+	<url-pattern>/FunctionUserServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>LoginServlet</servlet-name>
+	<servlet-class>LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>LoginServlet</servlet-name>
+	<url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
 	<servlet-name>MainMenuAdmin</servlet-name>
 	<servlet-class>MainMenuAdmin</servlet-class>
   </servlet>
@@ -93,7 +111,6 @@
 	<servlet-name>MainMenuUser</servlet-name>
 	<url-pattern>/MainMenuUser</url-pattern>
   </servlet-mapping>
-
 
   <servlet>
 	<servlet-name>RegisterBookServlet</servlet-name>
@@ -132,6 +149,43 @@
   </servlet-mapping>
 
   <servlet>
+	<servlet-name>SaveBooksServlet</servlet-name>
+	<servlet-class>SaveBooksServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SaveBooksServlet</servlet-name>
+	<url-pattern>/SaveBooksServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>SearchCategoryServlet</servlet-name>
+	<servlet-class>SearchCategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SearchCategoryServlet</servlet-name>
+	<url-pattern>/SearchCategoryServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>SearchMenuServlet</servlet-name>
+	<servlet-class>SearchMenuServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SearchMenuServlet</servlet-name>
+	<url-pattern>/SearchMenuServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>SearchTitleServlet</servlet-name>
+	<servlet-class>SearchTitleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>SearchTitleServlet</servlet-name>
+	<url-pattern>/SearchTitleServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
 	<servlet-name>returnBook</servlet-name>
 	<servlet-class>returnBook</servlet-class>
   </servlet>
@@ -149,23 +203,6 @@
 	<url-pattern>/SearchAuthorServlet</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-	<servlet-name>SearchTitleServlet</servlet-name>
-	<servlet-class>SearchTitleServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>SearchTitleServlet</servlet-name>
-	<url-pattern>/SearchTitleServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-	<servlet-name>updateBook</servlet-name>
-	<servlet-class>updateBook</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>updateBook</servlet-name>
-	<url-pattern>/updateBook</url-pattern>
-  </servlet-mapping>
 
   <servlet>
 	<servlet-name>UpdateBookServlet</servlet-name>
@@ -176,14 +213,6 @@
 	<url-pattern>/UpdateBookServlet</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-	<servlet-name>updateInventory</servlet-name>
-	<servlet-class>updateInventory</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>updateInventory</servlet-name>
-	<url-pattern>/updateInventory</url-pattern>
-  </servlet-mapping>
 
   <servlet>
 	<servlet-name>UpdateInventoryServlet</servlet-name>
@@ -195,14 +224,6 @@
   </servlet-mapping>
 
 
-  <servlet>
-	<servlet-name>updateLend</servlet-name>
-	<servlet-class>updateLend</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>updateLend</servlet-name>
-	<url-pattern>/updateLend</url-pattern>
-  </servlet-mapping>
 
 <servlet>
 	<servlet-name>UpdateLendServlet</servlet-name>
