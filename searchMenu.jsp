@@ -8,7 +8,7 @@
 <h2>3.分野</h2>
 <h2>4.戻る</h2>
 
-<form action="MainMenuServlet" method="POST">
+<form action="SearchMenuServlet" method="POST">
     <input name="str" type="number">
     <input type="submit">
 </form>
