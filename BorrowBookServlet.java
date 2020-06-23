@@ -11,6 +11,7 @@ public class BorrowBookServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
     throws ServletException,IOException{
         SqlMethod sql = new SqlMethod();
+        PrintWriter out = res.getWriter();
 
         String ISBN = req.getParameter("ISBN");
         String empID = req.getParameter("empID");

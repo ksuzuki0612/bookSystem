@@ -11,6 +11,7 @@ public class RegisterBookServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
     throws ServletException,IOException{
         SqlMethod sql = new SqlMethod();
+        PrintWriter out = res.getWriter();
 
         String pubdate = req.getParameter("regPubdate");
         String authors = req.getParameter("regAuthor");

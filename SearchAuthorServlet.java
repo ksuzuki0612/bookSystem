@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ public class SearchAuthorServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
     throws ServletException,IOException{
         SqlMethod sql = new SqlMethod();
+        PrintWriter out = res.getWriter();
 
         String author = req.getParameter("searchAuthor");
         
@@ -20,6 +22,7 @@ public class SearchAuthorServlet extends HttpServlet{
             out.println("探している著者の書籍がありません。");
         }else {
             sql.searchAuthor(author);
+            
         }
        
     }
