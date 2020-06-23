@@ -16,8 +16,8 @@ public class DeleteBookServlet extends HttpServlet{
 
         String isbn = req.getParameter("deleteISBN");
         
-        boolean delete = sql.deleteBook(isbn);
         try{
+        	boolean delete = sql.deleteBook(isbn);
             if(delete == false){
                 out.println("書籍を削除できませんでした。");
                 res.sendRedirect("choiceMenuAdmin.jsp");
