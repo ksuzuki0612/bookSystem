@@ -18,7 +18,7 @@ public class CategoryCheckServlet extends HttpServlet{
         boolean findcategory = sql.checkField(searchfield);
 
         if(findcategory == false){
-            res.sendRedirect("探している分野の書籍がありません。");
+            out.println("探している分野の書籍がありません。");
         }else {
             sql.searchField(searchfield);
         }
