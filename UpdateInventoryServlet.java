@@ -24,7 +24,7 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
             String str = request.getParameter("inventory");
             int addInventory = Integer.parseInt(str);
             sql.dbUpdataInventory( allowISBN,addInventory );
-            out.println("<a href=" + "UpdataBook.jsp" + ">更新メニューに戻る</a>");
+            out.println("<a href=" + "updateBook.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
     }
 }

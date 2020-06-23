@@ -23,7 +23,7 @@ public class UpdateLendServlet extends HttpServlet {//[2]
             String str= request.getParameter("addBorrowedAmount");
             int addBorrowedAmount = Integer.parseInt(str);
             sql.dbAddBorrowedAmount( aISBN,addBorrowedAmount);
-            out.println("<a href=" + "updataBook.jsp" + ">更新メニューに戻る</a>");
+            out.println("<a href=" + "updateBook.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
     }
 }
