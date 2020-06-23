@@ -20,9 +20,19 @@ public class UpdateLendServlet extends HttpServlet {//[2]
             out.println("<title>ログイン</title>");
             out.println("</head><body>");//[4]
             String aISBN = request.getParameter("ISBN");
-            String str= request.getParameter("addBorrowedAmount");
+            String str = request.getParameter("addBorrowedAmount");
             int addBorrowedAmount = Integer.parseInt(str);
-            sql.dbAddBorrowedAmount( aISBN,addBorrowedAmount);
+            int s = sql.dbAddBorrowedAmount( aISBN,addBorrowedAmount);
+            if(s==0){
+                System.out.println("更新したい本がありません。");
+            }
+            if(s==1){
+                System.out.println("貸出数は更新されました。");
+
+            }
+            if(s==3){
+                System.out.println("エラーが発生しました");
+            }
             out.println("<a href=" + "updateBook.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
     }

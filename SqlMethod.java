@@ -534,7 +534,7 @@ public class SqlMethod{
      *
      */
 
-     public void returnBook(String isbn,int id){
+     public int returnBook(String isbn,int id){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
         try{
@@ -554,12 +554,15 @@ public class SqlMethod{
 
             Statement st2 = con.createStatement();
             int count2 = st.executeUpdate(query2);
-
-            System.out.println("書籍の貸出は削除されました。");
-
+            int a =0;
+            
             st.close();
             con.close();
-            }catch(Exception e) { System.out.println(e);}
+           return a;
+            }catch(Exception e) { 
+                int s = 3;
+                return s;
+            }
 
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
@@ -612,7 +615,7 @@ public class SqlMethod{
      *
      */
 
-      public void dbUpdataInventory(String ISBN,int Inventory ){
+      public int dbUpdataInventory(String ISBN,int Inventory ){
       	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
         try{
 
@@ -630,21 +633,23 @@ public class SqlMethod{
             ResultSet rs = st.executeQuery(query);
             rs.next();
             int update = rs.getInt(1);
-
+            int a =0;
             if(update == 0){
-                System.out.println("更新したい本がありません。");
+               
+                return a;
             }else{
-
+                a++;
                 Statement st2 = con.createStatement();
                 int count = st2.executeUpdate(query2);
-
-                System.out.println("在庫数は更新されました。");
                 st.close();
                 con.close();
-                }
+                return a;
+            }
             
-            
-            }catch(Exception e) { System.out.println(e);}
+            }catch(Exception e) {
+                int s=2; 
+                return s;
+            }
 
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
@@ -655,7 +660,7 @@ public class SqlMethod{
      *
      */
 
-     public void dbAddBorrowedAmount(String ISBN,int addBorrowedAmount ){
+     public int dbAddBorrowedAmount(String ISBN,int addBorrowedAmount ){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
         try{
@@ -674,21 +679,24 @@ public class SqlMethod{
             ResultSet rs = st.executeQuery(query);
             rs.next();
             int update = rs.getInt(1);
-
+            int a =0;
             if(update == 0){
-                System.out.println("更新したい本がありません。");
-            }else{
+                return a;
 
+            }else{
+                a++;
                 Statement st2 = con.createStatement();
                 int count = st.executeUpdate(query2);
-
-                System.out.println("貸出数は更新されました。");
                 st.close();
                 con.close();
+                return a;
                 }
 
             
-            }catch(Exception e) { System.out.println(e);}
+            }catch(Exception e) {
+                int s = 3; 
+                return s;
+            }
 
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
