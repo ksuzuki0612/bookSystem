@@ -23,8 +23,10 @@ public class BorrowBookServlet extends HttpServlet{
 
         if(borrowBook == false){
             out.println("書籍はお一人10冊までです。");
+            res.sendRedirect("choiceMenuAdmin.jsp");
         }else {
             out.println("書籍は貸し出されました。");
+            res.sendRedirect("choiceMenuAdmin.jsp");
         }
        
     }

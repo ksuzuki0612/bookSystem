@@ -19,8 +19,10 @@ public class CategoryCheckServlet extends HttpServlet{
 
         if(findcategory == false){
             out.println("探している分野の書籍がありません。");
+            res.sendRedirect("choiceMenuUser.jsp");
         }else {
             sql.searchField(searchfield);
+            res.sendRedirect("searchMenu.jsp");
         }
        
     }

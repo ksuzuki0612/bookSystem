@@ -19,8 +19,10 @@ public class DeleteBookServlet extends HttpServlet{
 
         if(delete == false){
             out.println("書籍を削除できませんでした。");
+            res.sendRedirect("choiceMenuAdmin.jsp");
         }else {
             out.println("書籍は削除されました。");
+            res.sendRedirect("choiceMenuAdmin.jsp");
         }
        
     }

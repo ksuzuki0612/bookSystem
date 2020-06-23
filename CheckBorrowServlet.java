@@ -19,6 +19,7 @@ public class CheckBorrowServlet extends HttpServlet{
 
         if(borrow == false){
            out.println("貸し出したい書籍は全部貸出中です。");
+           res.sendRedirect("choiceMenuAdmin.jsp");
         }else {
             res.sendRedirect("borrowbook.jsp");
         }

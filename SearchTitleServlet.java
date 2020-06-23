@@ -19,8 +19,10 @@ public class TitleCheckServlet extends HttpServlet{
 
         if(findtitle == false){
             out.println("探しているタイトルの書籍がありません。");
+            res.sendRedirect("choiceMenuUser.jsp");
         }else {
             sql.searchTitle(title);
+            res.sendRedirect("searchMenu.jsp");
         }
        
     }

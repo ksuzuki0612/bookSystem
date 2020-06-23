@@ -20,9 +20,10 @@ public class SearchAuthorServlet extends HttpServlet{
 
         if(delete == false){
             out.println("探している著者の書籍がありません。");
+            res.sendRedirect("choiceMenuUser.jsp");
         }else {
             sql.searchAuthor(author);
-            
+            res.sendRedirect("searchMenu.jsp");
         }
        
     }

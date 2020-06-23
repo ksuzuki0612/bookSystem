@@ -27,8 +27,10 @@ public class RegisterBookServlet extends HttpServlet{
 
         if(register == true){
             out.println("書籍は登録されました。");
+            res.sendRedirect("choiceMenuAdmin.jsp");
         }else {
             out.println("書籍は登録出来ませんでした。");
+            res.sendRedirect("choiceMenuAdmin.jsp");
         }
        
     }
