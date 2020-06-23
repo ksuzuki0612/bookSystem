@@ -5,11 +5,11 @@
 </head>
 
 <body>
-<form action="UpdataBook2" method="POST">
+<form action="UpdateLendServlet" method="POST">
     <h2>ISBNを入力してください</h2>
     <input name="ISBN" type="number">
     <h2>貸出数を入力してください</h2>
-    <input name="inventory" type="number">
+    <input name="addBorrowedAmount" type="number">
     <input type="submit">
 </body>
 </html>
