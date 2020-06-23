@@ -104,21 +104,21 @@
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>ResetPasswordServletAdmin</servlet-name>
-	<servlet-class>ResetPasswordServletAdmin</servlet-class>
+	<servlet-name>ResetPasswordAdminServlet</servlet-name>
+	<servlet-class>ResetPasswordAdminServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>ResetPasswordServletAdmin</servlet-name>
-	<url-pattern>/ResetPasswordServletAdmin</url-pattern>
+	<servlet-name>ResetPasswordAdminServlet</servlet-name>
+	<url-pattern>/ResetPasswordAdminServlet</url-pattern>
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>ResetPasswordServletUser</servlet-name>
-	<servlet-class>ResetPasswordServletUser</servlet-class>
+	<servlet-name>ResetPasswordUserServlet</servlet-name>
+	<servlet-class>ResetPasswordUserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>ResetPasswordServletUser</servlet-name>
-	<url-pattern>/ResetPasswordServletUser</url-pattern>
+	<servlet-name>ResetPasswordUserServlet</servlet-name>
+	<url-pattern>/ResetPasswordUserServlet</url-pattern>
   </servlet-mapping>
 
   <servlet>
