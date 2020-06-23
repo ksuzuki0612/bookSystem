@@ -23,19 +23,17 @@ public class ReturnBookServlet extends HttpServlet {
             
             String str = request.getParameter("employeeUi");
             int employeeUi = Integer.parseInt(str);
-            String isbnUi = request.getParameter("isbnUi");//[6]
-            this.returnbooks(employeeUi,isbnUi);
+            String isbnUi = request.getParameter("isbnUi");
+            int a = sql.returnBook(isbnUi,employeeUi);
+            if(a==0){
+            	System.out.println("書籍の貸出は削除されました。");
+            }
+            if(a==3){
+            	System.out.println("エラーが発生しました。");
+            }
 			out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
        }
-
-    private void returnbooks(int employeeUi, String isbnUi) {
-        //    	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-             sql.returnBook(isbnUi,employeeUi);
-//        logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
-    }
-
-}
 
 
 
