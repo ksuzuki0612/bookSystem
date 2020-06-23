@@ -26,6 +26,7 @@ public class CheckBorrowServlet extends HttpServlet{
         }
         catch(Exception e){
             out.println("SQLエラーです");
+            e.printStackTrace();
            	res.sendRedirect("choiceMenuAdmin.jsp");
         }
        

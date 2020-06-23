@@ -31,7 +31,8 @@ public class BorrowBookServlet extends HttpServlet{
         	}
         }
         catch(Exception e){
-        	out.println("SQLエラーです");
+            out.println("SQLエラーです");
+            e.printStackTrace();
         	res.sendRedirect("choiceMenuAdmin.jsp");
         }
 

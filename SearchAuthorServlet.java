@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class SearchAuthorServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
-    throws ServletException,IOException,SQLException{
+    throws ServletException,IOException{
         SqlMethod sql = new SqlMethod();
         PrintWriter out = res.getWriter();
 
@@ -30,6 +30,7 @@ public class SearchAuthorServlet extends HttpServlet{
         }
         catch(Exception e){
             out.println("SQLエラーです");
+            e.printStackTrace();
             res.sendRedirect("choiceMenuUser.jsp");
         }
        
