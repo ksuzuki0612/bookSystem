@@ -3,7 +3,7 @@
 <body>
 <h1>著者名を入力してください。。</h1>
 
-<form action="RegisterBookServlet" method="POST">
+<form action="SearchAuthorServlet" method="POST">
     <h2>著者</h2>
     <input name="searchAuthor" type="text">
     <input type="submit">

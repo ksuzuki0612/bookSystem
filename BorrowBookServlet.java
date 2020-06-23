@@ -21,9 +21,9 @@ public class BorrowBookServlet extends HttpServlet{
         boolean borrowBook = sql.borrowBook(ISBN, eid, borrowFrom, borrowTill);
 
         if(borrowBook == false){
-            res.sendRedirect("employeecannotborrow.jsp");
+            out.println("書籍はお一人10冊までです。");
         }else {
-            res.sendRedirect("bookborrowed.jsp");
+            out.println("書籍は貸し出されました。");
         }
        
     }

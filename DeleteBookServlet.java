@@ -17,9 +17,9 @@ public class DeleteBookServlet extends HttpServlet{
         boolean delete = sql.deleteBook(isbn);
 
         if(delete == false){
-            res.sendRedirect("nobook.jsp");
+            out.println("書籍を削除できませんでした。");
         }else {
-            res.sendRedirect("bookdeleted.jsp");
+            out.println("書籍は削除されました。");
         }
        
     }

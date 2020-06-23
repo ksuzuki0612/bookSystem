@@ -25,9 +25,9 @@ public class RegisterBookServlet extends HttpServlet{
         boolean register = sql.registerBook(pubdate, authors, isbn, title, publisher, category, inv, borrowedAmount);
 
         if(register == true){
-            res.sendRedirect("bookregistered.jsp");
+            out.println("書籍は登録されました。");
         }else {
-            res.sendRedirect("nobookregistered.jsp");
+            out.println("書籍は登録出来ませんでした。");
         }
        
     }

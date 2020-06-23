@@ -19,17 +19,17 @@ public class SearchMenuServlet extends HttpServlet{
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         SqlMethod sql = new SqlMethod();
-	int selected = request.getParameter("str"); 
+	int n = Integer.parseInt(selected); 
         try{
-            if(selected ==1){
+            if(n ==1){
             	RequestDispatcher dispatch = request.getRequestDispatcher("SearchTitle.jsp");
 		        dispatch.forward(request, response);
             }
-            else if(selected ==2){
+            else if(n ==2){
             	RequestDispatcher dispatch = request.getRequestDispatcher("SearchAuthor.jsp");
 		        dispatch.forward(request, response);
             }
-            else if(selected ==3){
+            else if(n ==3){
                 RequestDispatcher dispatch = request.getRequestDispatcher("SearchCategory.jsp");
 		        dispatch.forward(request, response);
             }
