@@ -10,6 +10,7 @@ public class MainMenuUser extends HttpServlet{
         response.setContentType("text/html; charset=UTF-8");
         String choiceUser = request.getParameter("choiceUser");
         int choiceUserInt = Integer.parseInt(choiceUser);
+        PrintWriter out = response.getWriter();
         switch (choiceUserInt) {
             case FeaturesMenu.UserMenu:
                 response.sendRedirect("userMenuUI.jsp");
