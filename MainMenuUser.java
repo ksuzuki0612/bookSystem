@@ -13,7 +13,7 @@ public class MainMenuUser extends HttpServlet{
                 out.println("管理者権限がありません");
                 break;
             case FeaturesMenu.ResetPass:
-               	out.println("<a href=" + "resetPassUIUser.jsp" + ">パスワード再設定画面</a>");
+               	out.println("<a href=" + "resetPassUserUI.jsp" + ">パスワード再設定画面</a>");
                 break;
             case FeaturesMenu.EndProgram:
                 out.println("終了");
