@@ -19,7 +19,10 @@ public class SearchMenuServlet extends HttpServlet{
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         SqlMethod sql = new SqlMethod();
-	int n = Integer.parseInt(selected); 
+        
+        String selected = request.getParameter("MenuNum");
+        
+		int n = Integer.parseInt(selected); 
         try{
             if(n ==1){
             	RequestDispatcher dispatch = request.getRequestDispatcher("SearchTitle.jsp");

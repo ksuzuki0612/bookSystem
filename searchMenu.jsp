@@ -9,7 +9,7 @@
 <h2>4.戻る</h2>
 
 <form action="SearchMenuServlet" method="POST">
-    <input name="str" type="number">
+    <input name="MenuNum" type="number">
     <input type="submit">
 </form>
 
