@@ -16,7 +16,7 @@ public class UpdateBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         	response.setContentType("text/html; charset=Shift_JIS");
-            PrintWriter out = res.getWriter();
+            PrintWriter out = response.getWriter();
      	    out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
             out.println("<title>更新メニュー</title>");
             out.println("</head><body>");
