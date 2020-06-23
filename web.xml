@@ -21,15 +21,6 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
   version="4.0"
   metadata-complete="true">
-
-  <servlet>
-	<servlet-name>ServletTest</servlet-name>
-	<servlet-class>ServletTest</servlet-class>
-  </servlet>
-  <servlet-mapping>
-	<servlet-name>ServletTest</servlet-name>
-	<url-pattern>/ServletTest</url-pattern>
-  </servlet-mapping>
   
   <servlet>
 	<servlet-name>LoginServlet</servlet-name>
@@ -86,13 +77,23 @@
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>MainMenuServlet</servlet-name>
-	<servlet-class>MainMenuServlet</servlet-class>
+	<servlet-name>MainMenuAdmin</servlet-name>
+	<servlet-class>MainMenuAdmin</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>MainMenuServlet</servlet-name>
-	<url-pattern>/MainMenuServlet</url-pattern>
+	<servlet-name>MainMenuAdmin</servlet-name>
+	<url-pattern>/MainMenuAdmin</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+	<servlet-name>MainMenuUser</servlet-name>
+	<servlet-class>MainMenuUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>MainMenuUser</servlet-name>
+	<url-pattern>/MainMenuUser</url-pattern>
+  </servlet-mapping>
+
 
   <servlet>
 	<servlet-name>RegisterBookServlet</servlet-name>
@@ -104,21 +105,21 @@
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>ResetPasswordServletAdmin</servlet-name>
-	<servlet-class>ResetPasswordServletAdmin</servlet-class>
+	<servlet-name>ResetPasswordAdminServlet</servlet-name>
+	<servlet-class>ResetPasswordAdminServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>ResetPasswordServletAdmin</servlet-name>
-	<url-pattern>/ResetPasswordServletAdmin</url-pattern>
+	<servlet-name>ResetPasswordAdminServlet</servlet-name>
+	<url-pattern>/ResetPasswordAdminServlet</url-pattern>
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>ResetPasswordServletUser</servlet-name>
-	<servlet-class>ResetPasswordServletUser</servlet-class>
+	<servlet-name>ResetPasswordUserServlet</servlet-name>
+	<servlet-class>ResetPasswordUserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>ResetPasswordServletUser</servlet-name>
-	<url-pattern>/ResetPasswordServletUser</url-pattern>
+	<servlet-name>ResetPasswordUserServlet</servlet-name>
+	<url-pattern>/ResetPasswordUserServlet</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -140,12 +141,12 @@
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>TitleCheckServlet</servlet-name>
-	<servlet-class>TitleCheckServlet</servlet-class>
+	<servlet-name>SearchTitleServlet</servlet-name>
+	<servlet-class>SearchTitleServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>TitleCheckServlet</servlet-name>
-	<url-pattern>/TitleCheckServlet</url-pattern>
+	<servlet-name>SearchTitleServlet</servlet-name>
+	<url-pattern>/SearchTitleServlet</url-pattern>
   </servlet-mapping>
 
   <servlet>
