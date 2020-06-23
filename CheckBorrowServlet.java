@@ -15,7 +15,7 @@ public class CheckBorrowServlet extends HttpServlet{
 
         String isbn = req.getParameter("borrowISBN");
         
-        boolean borrow = sql.borrowBookCheckk(isbn);
+        boolean borrow = sql.borrowBookCheck(isbn);
 
         if(borrow == false){
            out.println("貸し出したい書籍は全部貸出中です。");
