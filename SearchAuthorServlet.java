@@ -17,14 +17,20 @@ public class SearchAuthorServlet extends HttpServlet{
 
         String author = req.getParameter("searchAuthor");
         
-        boolean delete = sql.deleteBook(author);
+        try{
+            boolean delete = sql.deleteBook(author);
 
-        if(delete == false){
-            out.println("探している著者の書籍がありません。");
+            if(delete == false){
+                out.println("探している著者の書籍がありません。");
+                res.sendRedirect("choiceMenuUser.jsp");
+            }else {
+                sql.searchAuthor(author);
+                res.sendRedirect("searchMenu.jsp");
+            }    
+        }
+        catch(Exception e){
+            out.println("SQLエラーです");
             res.sendRedirect("choiceMenuUser.jsp");
-        }else {
-            sql.searchAuthor(author);
-            res.sendRedirect("searchMenu.jsp");
         }
        
     }

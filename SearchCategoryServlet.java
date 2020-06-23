@@ -16,14 +16,20 @@ public class SearchCategoryServlet extends HttpServlet{
 
         String searchfield = req.getParameter("searchcategory");
         
-        boolean findcategory = sql.checkField(searchfield);
+        try{
+            boolean findcategory = sql.checkField(searchfield);
 
-        if(findcategory == false){
-            out.println("探している分野の書籍がありません。");
+            if(findcategory == false){
+                out.println("探している分野の書籍がありません。");
+                res.sendRedirect("choiceMenuUser.jsp");
+            }else {
+                sql.searchField(searchfield);
+                res.sendRedirect("searchMenu.jsp");
+            }
+        }
+        catch(Exception e){
+            out.println("SQLエラーです");
             res.sendRedirect("choiceMenuUser.jsp");
-        }else {
-            sql.searchField(searchfield);
-            res.sendRedirect("searchMenu.jsp");
         }
        
     }

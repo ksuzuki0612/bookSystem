@@ -24,13 +24,19 @@ public class RegisterBookServlet extends HttpServlet{
         int inv = Integer.parseInt(inventory);
         int borrowedAmount = 0;
         
-        boolean register = sql.registerBook(pubdate, authors, isbn, title, publisher, category, inv, borrowedAmount);
+        try{
+            boolean register = sql.registerBook(pubdate, authors, isbn, title, publisher, category, inv, borrowedAmount);
 
-        if(register == true){
-            out.println("書籍は登録されました。");
-            res.sendRedirect("choiceMenuAdmin.jsp");
-        }else {
-            out.println("書籍は登録出来ませんでした。");
+            if(register == true){
+                out.println("書籍は登録されました。");
+                res.sendRedirect("choiceMenuAdmin.jsp");
+            }else {
+                out.println("書籍は登録出来ませんでした。");
+                res.sendRedirect("choiceMenuAdmin.jsp");
+            }
+        }
+        catch(Exception e){
+            out.println("SQLエラーです");
             res.sendRedirect("choiceMenuAdmin.jsp");
         }
        

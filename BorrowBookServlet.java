@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class BorrowBookServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
-    throws ServletException,IOException,SQLException{
+    throws ServletException,IOException{
         SqlMethod sql = new SqlMethod();
         PrintWriter out = res.getWriter();
 
@@ -20,15 +20,21 @@ public class BorrowBookServlet extends HttpServlet{
         String borrowFrom = req.getParameter("borrowFrom");
         String borrowTill = req.getParameter("borrowTill");
         
-        boolean borrowBook = sql.borrowBook(ISBN, eid, borrowFrom, borrowTill);
-
-        if(borrowBook == false){
-            out.println("書籍はお一人10冊までです。");
-            res.sendRedirect("choiceMenuAdmin.jsp");
-        }else {
-            out.println("書籍は貸し出されました。");
-            res.sendRedirect("choiceMenuAdmin.jsp");
+        try{
+        	boolean borrowBook = sql.borrowBook(ISBN, eid, borrowFrom, borrowTill);
+        	if(borrowBook == false){
+            	out.println("書籍はお一人10冊までです。");
+            	res.sendRedirect("choiceMenuAdmin.jsp");
+        	}else {
+            	out.println("書籍は貸し出されました。");
+            	res.sendRedirect("choiceMenuAdmin.jsp");
+        	}
         }
+        catch(Exception e){
+        	out.println("SQLエラーです");
+        	res.sendRedirect("choiceMenuAdmin.jsp");
+        }
+
        
     }
 }

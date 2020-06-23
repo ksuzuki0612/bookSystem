@@ -17,14 +17,20 @@ public class DeleteBookServlet extends HttpServlet{
         String isbn = req.getParameter("deleteISBN");
         
         boolean delete = sql.deleteBook(isbn);
-
-        if(delete == false){
-            out.println("書籍を削除できませんでした。");
-            res.sendRedirect("choiceMenuAdmin.jsp");
-        }else {
-            out.println("書籍は削除されました。");
+        try{
+            if(delete == false){
+                out.println("書籍を削除できませんでした。");
+                res.sendRedirect("choiceMenuAdmin.jsp");
+            }else {
+                out.println("書籍は削除されました。");
+                res.sendRedirect("choiceMenuAdmin.jsp");
+            }
+        }
+        catch(Exception e){
+            out.println("SQLエラーです");
             res.sendRedirect("choiceMenuAdmin.jsp");
         }
+        
        
     }
 }

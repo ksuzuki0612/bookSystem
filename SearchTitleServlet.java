@@ -16,14 +16,20 @@ public class SearchTitleServlet extends HttpServlet{
 
         String title = req.getParameter("searchtitle");
         
-        boolean findtitle = sql.checkTitle(title);
+        try{
+            boolean findtitle = sql.checkTitle(title);
 
-        if(findtitle == false){
-            out.println("探しているタイトルの書籍がありません。");
+            if(findtitle == false){
+                out.println("探しているタイトルの書籍がありません。");
+                res.sendRedirect("choiceMenuUser.jsp");
+            }else {
+                sql.searchTitle(title);
+                res.sendRedirect("searchMenu.jsp");
+            }    
+        }
+        catch(Exception e){
+            out.println("SQLエラーです");
             res.sendRedirect("choiceMenuUser.jsp");
-        }else {
-            sql.searchTitle(title);
-            res.sendRedirect("searchMenu.jsp");
         }
        
     }
