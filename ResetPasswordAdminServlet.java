@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("ResetPasswordServletAdmin")
 	
-public class ResetPasswordServletAdmin extends HttpServlet{
+public class ResetPasswordAdminServlet extends HttpServlet{
     protected void doPost(final HttpServletRequest req, final HttpServletResponse res)
             throws ServletException, IOException {
 
