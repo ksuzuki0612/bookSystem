@@ -25,7 +25,7 @@ public class ReturnBookServlet extends HttpServlet {
             int employeeUi = Integer.parseInt(str);
             String isbnUi = request.getParameter("isbnUi");//[6]
             this.returnbooks(employeeUi,isbnUi);
-　　　　　　out.println("<a href=" + "FunctionAdminServlet.java" + ">更新メニューに戻る</a>");
+　　　　　　out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
        }
 
