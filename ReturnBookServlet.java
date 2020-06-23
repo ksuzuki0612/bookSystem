@@ -31,9 +31,9 @@ public class ReturnBookServlet extends HttpServlet {
             if(a==3){
             	System.out.println("エラーが発生しました。");
             }
-			out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
+	    out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
        }
 
-
+}
 
