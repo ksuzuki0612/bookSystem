@@ -122,12 +122,21 @@
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>ReturnBook</servlet-name>
-	<servlet-class>ReturnBook</servlet-class>
+	<servlet-name>ReturnBookServlet</servlet-name>
+	<servlet-class>ReturnBookServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>ReturnBook</servlet-name>
-	<url-pattern>/ReturnBook</url-pattern>
+	<servlet-name>ReturnBookServlet</servlet-name>
+	<url-pattern>/ReturnBookServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>returnBook</servlet-name>
+	<servlet-class>returnBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>returnBook</servlet-name>
+	<url-pattern>/returnBook</url-pattern>
   </servlet-mapping>
 
   <servlet>
@@ -149,31 +158,60 @@
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>UpdataBook</servlet-name>
-	<servlet-class>UpdataBook</servlet-class>
+	<servlet-name>updateBook</servlet-name>
+	<servlet-class>updateBook</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>UpdataBook</servlet-name>
-	<url-pattern>/UpdataBook</url-pattern>
+	<servlet-name>updateBook</servlet-name>
+	<url-pattern>/updateBook</url-pattern>
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>UpdataBook1</servlet-name>
-	<servlet-class>UpdataBook1</servlet-class>
+	<servlet-name>UpdateBookServlet</servlet-name>
+	<servlet-class>UpdateBookServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>UpdataBook1</servlet-name>
-	<url-pattern>/UpdataBook1</url-pattern>
+	<servlet-name>UpdateBookServlet</servlet-name>
+	<url-pattern>/UpdateBookServlet</url-pattern>
   </servlet-mapping>
 
   <servlet>
-	<servlet-name>UpdataBook2</servlet-name>
-	<servlet-class>UpdataBook2</servlet-class>
+	<servlet-name>updateInventory</servlet-name>
+	<servlet-class>updateInventory</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>UpdataBook2</servlet-name>
-	<url-pattern>/UpdataBook2</url-pattern>
+	<servlet-name>updateInventory</servlet-name>
+	<url-pattern>/updateInventory</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+	<servlet-name>UpdateInventoryServlet</servlet-name>
+	<servlet-class>UpdateInventoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdateInventoryServlet</servlet-name>
+	<url-pattern>/UpdateInventoryServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+	<servlet-name>updateLend</servlet-name>
+	<servlet-class>updateLend</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>updateLend</servlet-name>
+	<url-pattern>/updateLend</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+	<servlet-name>UpdateLendServlet</servlet-name>
+	<servlet-class>UpdateLendServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>UpdateLendServlet</servlet-name>
+	<url-pattern>/UpdateLendServlet</url-pattern>
+  </servlet-mapping>
+
 
   <servlet>
 	<servlet-name>UserMenu</servlet-name>
