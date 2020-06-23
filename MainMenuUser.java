@@ -1,3 +1,8 @@
+import java.io.*;
+import java.net.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
 public class MainMenuUser extends HttpServlet{
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
