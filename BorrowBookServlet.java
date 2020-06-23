@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class BorrowBookServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req,HttpServletResponse res)
-    throws ServletException,IOException,SQLException{
+    throws ServletException,IOException{
         SqlMethod sql = new SqlMethod();
         PrintWriter out = res.getWriter();
 
