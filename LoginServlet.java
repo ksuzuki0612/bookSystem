@@ -50,6 +50,7 @@ public class LoginServlet extends HttpServlet{
         }
         catch(Exception e){
             out.println("<a href=" + "wrongPass.jsp" + ">パスワード/IDを再入力してください</a>");
+            e.printStackTrace();
         }
        out.println("</body></html>");
     }
