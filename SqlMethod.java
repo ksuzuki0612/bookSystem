@@ -14,7 +14,7 @@ import java.text.*;
  * @author Engler Mate Janos
  * @version 2.0
  * @since 1.0
- *aaa
+ *bb
  */
 
 public class SqlMethod{
