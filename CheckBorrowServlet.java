@@ -38,6 +38,7 @@ public class CheckBorrowServlet extends HttpServlet{
         }
         catch(Exception e){
             out.println("<a href=" + "adminMenuUI.jsp" + ">データベースに繋ぐことが出来ません。</a>");
+            e.printStackTrace();
         }
        out.println("</body></html>");
     }

@@ -101,7 +101,7 @@ public class SqlMethod{
         try{
 
             
-            String query = "SELECT COUNT('ISBN') FROM bookinfo"+
+            String query = "SELECT inventory, borrowed FROM bookinfo"+
                             " WHERE"+
                             " ISBN ='" + ISBN+ "'  ";
             
@@ -120,7 +120,7 @@ public class SqlMethod{
                 return false;
             }else{
                 return true;
-            }            
+                }               
             
             }
 
