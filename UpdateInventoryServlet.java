@@ -23,21 +23,32 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
             String allowISBN = request.getParameter("ISBN");
             String str = request.getParameter("inventory");
             int addInventory = Integer.parseInt(str);
-            int s = sql.dbUpdataInventory( allowISBN,addInventory );
-            if(s==0){
-                out.println("更新したい本がありません。");
+            boolean strCheck=  checkNull(str);
+            boolean allowISBNCheck=  checkNull(allowISBN);
+            if(strCheck && allowISBNCheck){
+                int s = sql.dbUpdataInventory( allowISBN,addInventory );
+                if(s==0){
+                    out.println("更新したい本がありません。");
+                }
+                if(s==1){
+                    out.println("在庫数は更新されました。");
+    
+                }
+                if(s==3){
+                    out.println("在庫数は更新されました。");
+                }       
             }
-            if(s==1){
-                out.println("在庫数は更新されました。");
-
+            else{
+                out.println("初めからやり直してください。");
             }
-            if(s==3){
-                out.println("在庫数は更新されました。");
-            }
-
-            
             out.println("<a href=" + "updateBook.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
+    }
+    private boolean checkNull(String name) {//[80]
+        if(name==null){//[81]
+            return false;//[82]
+        return true;
+       }
     }
 }
 

@@ -25,16 +25,28 @@ public class ReturnBookServlet extends HttpServlet {
             String str = request.getParameter("employeeUi");
             int employeeUi = Integer.parseInt(str);
             String isbnUi = request.getParameter("isbnUi");
-            int a = sql.returnBook(isbnUi,employeeUi);
-            if(a==0){
-            	out.println("書籍の貸出は削除されました。");
+            boolean employeeUiCheck = checkNull(str);
+            boolean isbnUiCheck =  checkNull(isbnUi);
+            if(employeeUiCheck && isbnUiCheck){    
+                int a = sql.returnBook(isbnUi,employeeUi);
+                if(a==0){
+            	    out.println("書籍の貸出は削除されました。");
+                }
+                if(a==3){
+            	    out.println("エラーが発生しました。");
+                }   
             }
-            if(a==3){
-            	out.println("エラーが発生しました。");
+            else{
+                out.println("初めからやり直してください。");
             }
-	    out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
+	        out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
+    }
+    private boolean checkNull(String name) {//[80]
+        if(name==null){//[81]
+            return false;//[82]
+        return true;
        }
-
+    }
 }
 

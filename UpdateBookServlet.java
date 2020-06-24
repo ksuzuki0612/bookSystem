@@ -34,7 +34,7 @@ public class UpdateBookServlet extends HttpServlet {
             }
             if(selected == 3){
 //                response.sendRedirect("updataBook2.jsp");
-                  out.println("<a href=" + "FunctionAdminServlet" + ">管理者メニューに戻る</a>");
+                  out.println("<a href=" + "adminMenuUI.jsp" + ">管理者メニューに戻る</a>");
             }
             else{
             	out.println("<a href=" + "updateBook.jsp" + ">再度入力してください</a>");
