@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class LoginServlet extends HttpServlet{
+public class DeleteBookServlet extends HttpServlet{
     public void doPost(final HttpServletRequest req, final HttpServletResponse res)
             throws ServletException, IOException{
 
