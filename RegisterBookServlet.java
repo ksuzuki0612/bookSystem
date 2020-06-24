@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class LoginServlet extends HttpServlet{
+public class RegisterBookServlet extends HttpServlet{
     public void doPost(final HttpServletRequest req, final HttpServletResponse res)
             throws ServletException, IOException{
 
@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet{
      	PrintWriter out = res.getWriter();
      	
      	out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
-        out.println("<title>ログイン</title>");
+        out.println("<title>書籍登録</title>");
         out.println("</head><body>");
      	
         SqlMethod sql = new SqlMethod();
