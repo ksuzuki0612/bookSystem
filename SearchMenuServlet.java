@@ -25,19 +25,16 @@ public class SearchMenuServlet extends HttpServlet{
 		int n = Integer.parseInt(selected); 
         try{
             if(n ==1){
-            	RequestDispatcher dispatch = request.getRequestDispatcher("searchTitle.jsp");
-		        dispatch.forward(request, response);
+            	response.sendRedirect("searchTitle.jsp");
             }
             else if(n ==2){
-            	RequestDispatcher dispatch = request.getRequestDispatcher("searchAuthor.jsp");
-		        dispatch.forward(request, response);
+            	response.sendRedirect("searchAuthor.jsp");
             }
             else if(n ==3){
-                RequestDispatcher dispatch = request.getRequestDispatcher("searchCategory.jsp");
-		        dispatch.forward(request, response);
+            	response.sendRedirect("searchCategory.jsp");
             }
             else{
-                return;
+                response.sendRedirect("userMenuUI.jsp");
             }
             
         }
