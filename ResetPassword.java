@@ -13,15 +13,6 @@ public class ResetPassword{
         }
     }
 
- /*   public boolean checkLoginID(int ID){
-        int id = ID;
- 
-        if(id == checkID){
-            return true;
-        }else{
-            return false;
-        }
-    }*/
 }
 
 
