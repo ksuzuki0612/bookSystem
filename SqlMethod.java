@@ -565,7 +565,7 @@ public class SqlMethod{
 
     }
 
-    public boolean deleteBook(String isbn) throws SQLException{
+    public boolean deleteBook(String ISBN) throws SQLException{
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
         
         try{
