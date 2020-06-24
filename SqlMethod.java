@@ -578,10 +578,10 @@ public class SqlMethod{
             
             String query = "SELECT COUNT('ISBN') FROM bookinfo"+
                             " WHERE"+
-                            " ISBN='" + isbn + "'  ";
+                            " ISBN='" + ISBN + "'  ";
             String query2 = "DELETE FROM bookinfo "+
                             "WHERE"+
-                            " ISBN = '" + isbn + "'";
+                            " ISBN = '" + ISBN + "'";
             
             Connection con = DriverManager.getConnection(url, userName, pwd);
             
