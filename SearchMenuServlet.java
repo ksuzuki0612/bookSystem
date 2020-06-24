@@ -14,7 +14,7 @@ public class SearchMenuServlet extends HttpServlet{
     Logger logger = Logger.getLogger(SearchMenuServlet.class.getName());
     List<Book> titleList = new ArrayList<>();
     int errorNum = 0;
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ServletException{
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();

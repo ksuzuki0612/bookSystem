@@ -13,7 +13,8 @@ import java.util.logging.Logger;
 public class ReturnBookServlet extends HttpServlet {
 	Logger logger = Logger.getLogger(ReturnBookServlet.class.getName());
 	SqlMethod sql =new SqlMethod();
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
             response.setContentType("text/html; charset=Shift_JIS");
             PrintWriter out = response.getWriter();
