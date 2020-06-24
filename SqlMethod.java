@@ -531,8 +531,7 @@ public class SqlMethod{
      * 入力されたISBNと従業員IDと一致する行を貸出中のDBから削除する
      *
      */
-
-     public void returnBook(String isbn,int id){
+      public int returnBook(String isbn,int id){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
         try{
@@ -553,17 +552,23 @@ public class SqlMethod{
             Statement st2 = con.createStatement();
             int count2 = st.executeUpdate(query2);
 
-            System.out.println("書籍の貸出は削除されました。");
-
             st.close();
             con.close();
-            }catch(Exception e) { System.out.println(e);}
-
+            int a =0;
+            return a;
+            }catch(Exception e) {
+            	int s = 3;
+            	return s;
+            }
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
                 }
 
     }
+
+
+    
+
 
     public boolean deleteBook(String ISBN) throws SQLException{
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
