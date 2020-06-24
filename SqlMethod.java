@@ -94,7 +94,7 @@ public class SqlMethod{
 
      */
 
-     public boolean borrowBookCheck(String isbn)throws SQLException{
+     public boolean borrowBookCheck(String ISBN)throws SQLException{
 
         logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
     	
@@ -590,18 +590,21 @@ public class SqlMethod{
             rs.next();
             int delete = rs.getInt(1);
 
-            st.close();
-            con.close();
+            
             
             if(delete == 0){
                 return false;
+
+                st.close();
+                con.close();
             }else{
 
                 Statement st2 = con.createStatement();
                 int count = st2.executeUpdate(query2);
 
                 return true;
-            
+                st.close();
+                con.close();
             }                       
                 }
 
