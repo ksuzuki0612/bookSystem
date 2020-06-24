@@ -18,10 +18,10 @@ public class FunctionUserServlet extends HttpServlet{
                 out.println("2，予約取消");
                 break;
             case UserMenuNum.ReturnProgram:
-                out.println("3,戻る");
+                response.sendRedirect("choiceMenuUser.jsp");
                 break;
             default:
-                out.println("再度入力してください"); 
+                out.println("<a href=" + "userMenuUI.jsp" + ">再度入力してください</a>"); 
         }   
     } 
 

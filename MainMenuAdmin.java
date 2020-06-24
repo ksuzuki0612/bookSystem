@@ -26,7 +26,7 @@ public class MainMenuAdmin extends HttpServlet{
                 out.println("終了");
                 break;
             default:
-                out.println("再度入力してください");
+                out.println("<a href=" + "choiceMenuAdmin.jsp" + ">再度入力してください</a>");
         }
     }
 

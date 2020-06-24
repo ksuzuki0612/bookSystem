@@ -25,7 +25,8 @@ public class MainMenuUser extends HttpServlet{
                 out.println("終了");
                 break;
             default:
-                out.println("再度入力してください");
+                out.println("<a href=" + "choiceMenuUser.jsp" + ">再度入力してください</a>");
+                
         }
     }
     

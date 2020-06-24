@@ -27,10 +27,10 @@ public class FunctionAdminServlet extends HttpServlet{
                 response.sendRedirect("returnBook.jsp");
                 break;
             case AdminMenuNum.ReturnProgram:
-                out.println("6,戻る");
+                response.sendRedirect("choiceMenuAdmin.jsp");
                 break;
             default:
-                out.println("再度入力してください");
+                out.println("<a href=" + "adminMenuUI.jsp" + ">再度入力してください</a>");
         }
     }
 
