@@ -24,14 +24,14 @@ public class UpdateLendServlet extends HttpServlet {//[2]
             int addBorrowedAmount = Integer.parseInt(str);
             int s = sql.dbAddBorrowedAmount( aISBN,addBorrowedAmount);
             if(s==0){
-                System.out.println("更新したい本がありません。");
+                out.println("更新したい本がありません。");
             }
             if(s==1){
-                System.out.println("貸出数は更新されました。");
+                out.println("貸出数は更新されました。");
 
             }
             if(s==3){
-                System.out.println("エラーが発生しました");
+                out.println("エラーが発生しました");
             }
             out.println("<a href=" + "updateBook.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");

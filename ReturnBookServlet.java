@@ -27,10 +27,10 @@ public class ReturnBookServlet extends HttpServlet {
             String isbnUi = request.getParameter("isbnUi");
             int a = sql.returnBook(isbnUi,employeeUi);
             if(a==0){
-            	System.out.println("書籍の貸出は削除されました。");
+            	out.println("書籍の貸出は削除されました。");
             }
             if(a==3){
-            	System.out.println("エラーが発生しました。");
+            	out.println("エラーが発生しました。");
             }
 	    out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");

@@ -25,14 +25,14 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
             int addInventory = Integer.parseInt(str);
             int s = sql.dbUpdataInventory( allowISBN,addInventory );
             if(s==0){
-                System.out.println("更新したい本がありません。");
+                out.println("更新したい本がありません。");
             }
             if(s==1){
-                System.out.println("在庫数は更新されました。");
+                out.println("在庫数は更新されました。");
 
             }
             if(s==3){
-                System.out.println("在庫数は更新されました。");
+                out.println("在庫数は更新されました。");
             }
 
             
