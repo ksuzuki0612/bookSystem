@@ -12,7 +12,7 @@ import java.text.*;
 /**
  * @ Sql methods for 書籍管理システム
  * @author Engler Mate Janos
- * @version 2.0
+ * @version 2.1
  * @since 1.0
  *bb
  */
@@ -20,7 +20,7 @@ import java.text.*;
 public class SqlMethod{
 
     Logger logger = Logger.getLogger(SqlMethod.class.getName());
-    final String url = "jdbc:mysql://localhost/librarysystem"; 
+    final String url = "jdbc:mysql://localhost/library"; 
     final String userName = "*";
     final String pwd = "*";
 
@@ -103,7 +103,7 @@ public class SqlMethod{
             
             String query = "SELECT COUNT('ISBN') FROM bookinfo"+
                             " WHERE"+
-                            " ISBN ='" + isbn + "'  ";
+                            " ISBN ='" + ISBN+ "'  ";
             
             
             Connection con = DriverManager.getConnection(url, userName, pwd);
@@ -593,18 +593,22 @@ public class SqlMethod{
             
             
             if(delete == 0){
-                return false;
+            
 
                 st.close();
                 con.close();
+                return false;
+
             }else{
 
                 Statement st2 = con.createStatement();
                 int count = st2.executeUpdate(query2);
 
-                return true;
+                
                 st.close();
                 con.close();
+                return true;
+
             }                       
                 }
 
