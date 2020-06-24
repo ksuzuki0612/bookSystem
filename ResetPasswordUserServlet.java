@@ -16,24 +16,31 @@ public class ResetPasswordUserServlet extends HttpServlet{
         PrintWriter out = res.getWriter();
 
         final ResetPassword pass = new ResetPassword();
-        final String ansStr = req.getParameter("ans");
-        final int ans = Integer.parseInt(ansStr);
 
-        if (ans == 1) {
-            res.sendRedirect("PassResultUI.jsp");
-            final String strID = req.getParameter("empID");
-            final int empID = Integer.parseInt(strID);
-
-            final String newPassword = req.getParameter("newPassword");
-            final String checkPassword = req.getParameter("checkPassword");
-            final boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
-
-            HttpSession session = req.getSession();
-            session.setAttribute("result", result);
-            res.sendRedirect("resultChangePassUser.jsp");
+        try{
+            final String ansStr = req.getParameter("ans");
+            final int ans = Integer.parseInt(ansStr);
+    
+            if (ans == 1) {
+                res.sendRedirect("PassResetUI.jsp");
+                final String strID = req.getParameter("empID");
+                final int empID = Integer.parseInt(strID);
+    
+                final String newPassword = req.getParameter("newPassword");
+                final String checkPassword = req.getParameter("checkPassword");
+                final boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
+    
+                HttpSession session = req.getSession();
+                session.setAttribute("result", result);
+                res.sendRedirect("resultChangePassUser.jsp");
+            }
+            else{
+                out.println("<a href=" + "choiceMenuUser.jsp" + ">メニュー画面へ戻る</a>");
+            }    
         }
-        else{
-            out.println("<a href=" + "choiceUserMenuUI.jsp" + ">メニュー画面へ戻る</a>");
+        catch(Exception e){
+            e.printStackTrace();
+            out.println("<a href=" + "choiceMenuUser.jsp" + ">例外が発生しました。メニュー画面へ戻る</a>");
         }
     }
 }
