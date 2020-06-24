@@ -24,7 +24,7 @@ public class BorrowBookServlet extends HttpServlet{
         SqlMethod sql = new SqlMethod();
 
         
-        String ISBN = req.getParameter("borrowISBN");
+        String ISBN = req.getParameter("lendISBN");
         String id = req.getParameter("borrowempID");
         int empID = Integer.parseInt(id);
         String borrowFrom = req.getParameter("borrowStart");

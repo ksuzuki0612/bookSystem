@@ -145,17 +145,18 @@ public class SqlMethod{
                             " WHERE"+
                             " employee_id = '" + empID + "'";
             
+            
+            String query2 ="SELECT COUNT('employee_name') FROM checkout"+
+                            " WHERE"+
+                            " employee_id='" + empID + "'  ";
+            
+            
             Connection con = DriverManager.getConnection(url, userName, pwd);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query);
             rs.next();
-            String ename = rs.getString("employee_name");
-
-            String query2 ="SELECT COUNT('employee_name') FROM checkout"+
-                            " WHERE"+
-                            " employee_id='" + empID + "'  ";
-
-            
+            String ename = rs.getString("employee_name");          
+           
             Statement st2 = con.createStatement();
             ResultSet rs2 = st2.executeQuery(query2);
             rs2.next();
@@ -165,13 +166,13 @@ public class SqlMethod{
                 return false;
             }else{
 
-                String getTitle = "SELECT title FROM bookinfo WHERE ISBN ='" + ISBN + "'";
-                Statement stt = con.createStatement();
-                ResultSet rst = stt.executeQuery(getTitle);
-                rst.next();
-                String title = rst.getString("title");
+                String query3 = "SELECT title FROM bookinfo WHERE ISBN ='" + ISBN + "'";
+                Statement st3 = con.createStatement();
+                ResultSet rs3 = st3.executeQuery(query3);
+                rs3.next();
+                String title = rs3.getString("title");
 
-                String query3 =
+                String query4 =
                 "INSERT INTO checkout (ISBN,"+
                 " title,"+
                 " employee_id,"+
@@ -185,14 +186,14 @@ public class SqlMethod{
                 "'" + ename + "',"+
                 " '" + borrowFrom + "', '" + borrowTill + "')";
 
-                Statement st3 = con.createStatement();
-                int count = st3.executeUpdate(query3);
+                Statement st4 = con.createStatement();
+                int count = st4.executeUpdate(query4);
 
-                String query4 ="UPDATE bookinfo SET borrowed =borrowed+1 "+
+                String query5 ="UPDATE bookinfo SET borrowed =borrowed+1 "+
                                 "WHERE"+
                                 " ISBN='" + ISBN + "'";
-                Statement st4 = con.createStatement();
-                int count2 = st4.executeUpdate(query4);
+                Statement st5 = con.createStatement();
+                int count2 = st5.executeUpdate(query5);
                 st.close();
                 con.close();
                 

@@ -5,6 +5,8 @@
 <h1>各項目を入力してください。</h1>
 
 <form action="BorrowBookServlet" method="POST">
+    <h2>ISBN</h2>
+    <input name="lendISBN" type="text">
     <h2>従業員ID</h2>
     <input name="borrowempID" type="text">
     <h2>貸出開始日</h2>
