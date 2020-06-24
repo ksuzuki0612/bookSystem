@@ -20,9 +20,7 @@ import java.text.*;
 public class SqlMethod{
 
     Logger logger = Logger.getLogger(SqlMethod.class.getName());
-    final String url = "jdbc:mysql://localhost:3306/librarysystem" +
-                        "?useUnicode=true&useJDBCCompliantTimezoneShift" +
-                        "=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    final String url = "jdbc:mysql://localhost/librarysystem"; 
     final String userName = "*";
     final String pwd = "*";
 
@@ -534,7 +532,7 @@ public class SqlMethod{
      *
      */
 
-     public int returnBook(String isbn,int id){
+     public void returnBook(String isbn,int id){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
         try{
@@ -555,14 +553,12 @@ public class SqlMethod{
             Statement st2 = con.createStatement();
             int count2 = st.executeUpdate(query2);
 
+            System.out.println("書籍の貸出は削除されました。");
+
             st.close();
             con.close();
-            int a =0;
-            return a;
-            }catch(Exception e) {
-            	int s = 3;
-            	return s;
-            }
+            }catch(Exception e) { System.out.println(e);}
+
             finally{
                     logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
                 }
@@ -640,6 +636,8 @@ public class SqlMethod{
                 a++;
                 Statement st2 = con.createStatement();
                 int count = st2.executeUpdate(query2);
+
+                System.out.println("在庫数は更新されました。");
                 st.close();
                 con.close();
                 }

@@ -1,45 +1,50 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
+import javax.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class RegisterBookServlet extends HttpServlet{
-    protected void doPost(HttpServletRequest req,HttpServletResponse res)
-    throws ServletException,IOException{
+
+public class LoginServlet extends HttpServlet{
+    public void doPost(final HttpServletRequest req, final HttpServletResponse res)
+            throws ServletException, IOException{
+
+        res.setContentType("text/html;charset=UTF8");
+     	PrintWriter out = res.getWriter();
+     	
+     	out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
+        out.println("<title>ログイン</title>");
+        out.println("</head><body>");
+     	
         SqlMethod sql = new SqlMethod();
-        PrintWriter out = res.getWriter();
 
-        String pubdate = req.getParameter("regPubdate");
-        String authors = req.getParameter("regAuthor");
-        String isbn = req.getParameter("regISBN");
+        
+        String ISBN = req.getParameter("regISBN");
         String title = req.getParameter("regTitle");
         String publisher = req.getParameter("regPublisher");
-        String category = req.getParameter("regCategory");
-        String inventory = req.getParameter("regInv");
-        int inv = Integer.parseInt(inventory);
+        String publishDate = req.getParameter("regPubdate");
+        String field = req.getParameter("regCategory");
+        String authors = req.getParameter("regAuthor");
+        String inv = req.getParameter("regInv");
+        int inventory = Integer.parseInt(inv);
         int borrowedAmount = 0;
-        
-        try{
-            boolean register = sql.registerBook(pubdate, authors, isbn, title, publisher, category, inv, borrowedAmount);
 
-            if(register == true){
-                out.println("書籍は登録されました。");
-                res.sendRedirect("choiceMenuAdmin.jsp");
-            }else {
-                out.println("書籍は登録出来ませんでした。");
-                res.sendRedirect("choiceMenuAdmin.jsp");
+        try{
+            boolean register = sql.registerBook(ISBN, title, publisher, publishDate, field, authors, inventory, borrowedAmount);
+            if (register == true){
+                out.println("<a href=" + "adminMenuUI.jsp" + ">書籍が登録されました。</a>");
+            } else {
+                out.println("<a href=" + "adminMenuUI.jsp" + ">書籍が登録出来ませんでした。</a>");
             }
         }
         catch(Exception e){
-            out.println("SQLエラーです");
-            e.printStackTrace();
-            res.sendRedirect("choiceMenuAdmin.jsp");
+            out.println("<a href=" + "adminMenuUI.jsp" + ">データベースに繋ぐことが出来ません。</a>");
         }
-       
+       out.println("</body></html>");
     }
 }
