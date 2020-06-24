@@ -111,11 +111,12 @@ public class SqlMethod{
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query);
             rs.next();
-            int isbncheck = rs.getInt(1);
+            int inv = rs.getInt("inventory");
+            int out = rs.getInt("borrowed");
             st.close();
             con.close();
             
-            if(isbncheck == 0){
+            if(inv <= out){
                 return false;
             }else{
                 return true;
