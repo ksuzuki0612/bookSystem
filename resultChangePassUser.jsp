@@ -14,6 +14,7 @@
 	}
 	catch(Exception e){
 		out.println("例外が発生し，パスワードの更新に失敗しました");
+		e.printStackTrace();
 	}
 %>
 
