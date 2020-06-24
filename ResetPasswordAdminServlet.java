@@ -20,7 +20,7 @@ public class ResetPasswordAdminServlet extends HttpServlet{
         final int ans = Integer.parseInt(ansStr);
 
         if (ans == 1) {
-            res.sendRedirect("PassResultUI.jsp");
+            res.sendRedirect("PassResetUI.jsp");
             final String strID = req.getParameter("empID");
             final int empID = Integer.parseInt(strID);
 
@@ -33,7 +33,7 @@ public class ResetPasswordAdminServlet extends HttpServlet{
             res.sendRedirect("resultChangePassAdmin.jsp");
         }
         else{
-            out.println("<a href=" + "choiceAdminMenuUI.jsp" + ">メニュー画面へ戻る</a>");
+            out.println("<a href=" + "choiceMenuAdmin.jsp" + ">メニュー画面へ戻る</a>");
         }
     }
 }
