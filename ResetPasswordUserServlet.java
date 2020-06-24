@@ -22,7 +22,7 @@ public class ResetPasswordUserServlet extends HttpServlet{
             final int ans = Integer.parseInt(ansStr);
     
             if (ans == 1) {
-                res.sendRedirect("PassResetUI.jsp");
+                res.sendRedirect("passResetUserUI.jsp");
                 final String strID = req.getParameter("empID");
                 final int empID = Integer.parseInt(strID);
     
