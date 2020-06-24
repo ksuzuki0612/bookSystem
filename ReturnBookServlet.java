@@ -42,11 +42,12 @@ public class ReturnBookServlet extends HttpServlet {
 	        out.println("<a href=" + "adminMenuUI.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
     }
-    private boolean checkNull(String name) {//[80]
-        if(name==null){//[81]
-            return false;//[82]
+    private boolean checkNull(String name) {
+        if(name==null){
+            return false;
+        }
         return true;
-       }
     }
 }
+
 

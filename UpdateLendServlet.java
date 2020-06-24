@@ -43,10 +43,10 @@ public class UpdateLendServlet extends HttpServlet {//[2]
             out.println("</body></html>");
     }
     private boolean checkNull(String name) {//[80]
-        if(name==null){//[81]
-            return false;//[82]
+        if(name==null){
+            return false;
+        }
         return true;
-       }
     }
 }
 
