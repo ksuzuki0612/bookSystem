@@ -719,7 +719,7 @@ public class SqlMethod{
      *
      */
 
-     public void dbUpdatePassword(int empID,String password){
+     public boolean dbUpdatePassword(int empID,String password){
 
         try{
 
@@ -739,20 +739,21 @@ public class SqlMethod{
         int update = rs.getInt(1);
 
         if(update == 0){
-            System.out.println("従業員が存在しません。");
+            return false;
         }else{
 
             Statement st2 = con.createStatement();
             int count = st2.executeUpdate(query2);
 
-
             st.close();
             con.close();
-            }
 
-        
-        
-        }catch(Exception e) { System.out.println(e);}
+            return true;
+            }
+        }
+        catch(Exception e) { 
+            return false;
+        }
     }
 
 }

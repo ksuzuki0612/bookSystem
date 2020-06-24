@@ -5,9 +5,12 @@ public class ResetPassword{
         int empID = ID;
         String password = pass;
         String checkPassword = checkPass;
+
         if(password.equals(checkPassword)){
-            sqlmethod.dbUpdatePassword(empID, password);
-            return true;
+
+            boolean result = sqlmethod.dbUpdatePassword(empID, password);
+
+            return result;
         }else{
             return false;
         }
