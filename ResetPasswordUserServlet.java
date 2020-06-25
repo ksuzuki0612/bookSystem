@@ -41,6 +41,7 @@ public class ResetPasswordUserServlet extends HttpServlet{
         catch(Exception e){
             e.printStackTrace();
             out.println("<a href=" + "choiceMenuUser.jsp" + ">例外が発生しました。メニュー画面へ戻る</a>");
+            out.println(e);
         }
     }
 }
