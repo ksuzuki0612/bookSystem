@@ -21,24 +21,28 @@ public class UpdateBookServlet extends HttpServlet {
      	    out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
             out.println("<title>更新メニュー</title>");
             out.println("</head><body>");
-            
             String str = request.getParameter("selectedUi");
-            int selected = Integer.parseInt(str);
-            if(selected == 1){
-//                response.sendRedirect("updataBook1.jsp");
-                  out.println("<a href=" + "updateInventory.jsp" + ">在庫変更へ進む</a>");
-            }
-            if(selected == 2){
-//                response.sendRedirect("updataBook2.jsp");
-                  out.println("<a href=" + "updateLend.jsp" + ">貸出本の更新へ進む</a>");
-            }
-            if(selected == 3){
-//                response.sendRedirect("updataBook2.jsp");
-                  out.println("<a href=" + "adminMenuUI.jsp" + ">管理者メニューに戻る</a>");
+            if(this.checkNull(str)){    
+                int selected = Integer.parseInt(str);
+                if(selected == 1){
+                    out.println("<a href=" + "updateInventory.jsp" + ">在庫変更へ進む</a>");
+                }
+                if(selected == 2){
+                    out.println("<a href=" + "updateLend.jsp" + ">貸出本の更新へ進む</a>");
+                }
+                if(selected == 3){
+                    out.println("<a href=" + "adminMenuUI.jsp" + ">管理者メニューに戻る</a>");
+                }
             }
             else{
             	out.println("<a href=" + "updateBook.jsp" + ">再度入力してください</a>");
             }
             out.println("</body></html>");
+    }
+    private boolean checkNull(String name) {
+        if(name.isEmpty()){
+            return false;
+        }
+        return true;
     }
 }

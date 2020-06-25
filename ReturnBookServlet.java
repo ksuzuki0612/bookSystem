@@ -21,13 +21,12 @@ public class ReturnBookServlet extends HttpServlet {
      	    out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
             out.println("<title>更新メニュー</title>");
             out.println("</head><body>");
-            
             String str = request.getParameter("employeeUi");
-            int employeeUi = Integer.parseInt(str);
             String isbnUi = request.getParameter("isbnUi");
             boolean employeeUiCheck = checkNull(str);
             boolean isbnUiCheck =  checkNull(isbnUi);
-            if(employeeUiCheck && isbnUiCheck){    
+            if(employeeUiCheck && isbnUiCheck){
+                int employeeUi = Integer.parseInt(str);
                 int a = sql.returnBook(isbnUi,employeeUi);
                 if(a==0){
             	    out.println("書籍の貸出は削除されました。");
@@ -43,11 +42,14 @@ public class ReturnBookServlet extends HttpServlet {
             out.println("</body></html>");
     }
     private boolean checkNull(String name) {
-        if(name==null){
+        if(name.isEmpty()){
             return false;
         }
         return true;
     }
 }
+
+
+
 
 

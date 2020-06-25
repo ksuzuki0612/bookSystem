@@ -22,10 +22,10 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
             out.println("</head><body>");
             String allowISBN = request.getParameter("ISBN");
             String str = request.getParameter("inventory");
-            int addInventory = Integer.parseInt(str);
             boolean strCheck=  checkNull(str);
             boolean allowISBNCheck=  checkNull(allowISBN);
             if(strCheck && allowISBNCheck){
+                int addInventory = Integer.parseInt(str);
                 int s = sql.dbUpdataInventory( allowISBN,addInventory );
                 if(s==0){
                     out.println("更新したい本がありません。");
@@ -45,7 +45,7 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
             out.println("</body></html>");
     }
     private boolean checkNull(String name) {
-        if(name==null){
+        if(name.isEmpty()){
             return false;
         }
         return true;
