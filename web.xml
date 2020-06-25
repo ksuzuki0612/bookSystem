@@ -41,6 +41,24 @@
   </servlet-mapping>
 
   <servlet>
+	<servlet-name>ChangePasswordAdminServlet</servlet-name>
+	<servlet-class>ChangePasswordAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ChangePasswordAdminServlet</servlet-name>
+	<url-pattern>/ChangePasswordAdminServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+	<servlet-name>ChangePasswordUserServlet</servlet-name>
+	<servlet-class>ChangePasswordUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ChangePasswordUserServlet</servlet-name>
+	<url-pattern>/ChangePasswordUserServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
 	<servlet-name>DeleteBookServlet</servlet-name>
 	<servlet-class>DeleteBookServlet</servlet-class>
   </servlet>
