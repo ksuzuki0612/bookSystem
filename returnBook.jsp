@@ -2,7 +2,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
 <head>
-	<title>貸出承認</title>
+	<title>返却受取</title>
 </head>
 
 <body>
@@ -14,6 +14,8 @@
     <input name="employeeUi" type="number">
     <input type="submit">
 </form>
+
+<a href="adminMenuUI.jsp" >更新メニューに戻る</a>
 
 </body>
 </html>

@@ -12,4 +12,5 @@
     <input name="addBorrowedAmount" type="number">
     <input type="submit">
 </body>
+	<a href="updateBook.jsp" >登録変更メニューに戻る</a>
 </html>

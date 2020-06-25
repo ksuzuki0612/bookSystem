@@ -2,7 +2,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
 	<head>
-	<title>UpdateBook</title>
+	<title>書籍在庫数変更</title>
 </head>
 <body>
 
@@ -14,6 +14,7 @@
     <input name="inventory" type="number">
     <input type="submit">
 </form>
+	<a href="updateBook.jsp" >登録変更メニューに戻る</a>
 
 </body>
 </html>
