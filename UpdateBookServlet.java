@@ -25,13 +25,13 @@ public class UpdateBookServlet extends HttpServlet {
             if(this.checkNull(str)){    
                 int selected = Integer.parseInt(str);
                 if(selected == 1){
-                    out.println("<a href=" + "updateInventory.jsp" + ">在庫変更へ進む</a>");
+                    response.sendRedirect("updateInventory.jsp");
                 }
                 if(selected == 2){
-                    out.println("<a href=" + "updateLend.jsp" + ">貸出本の更新へ進む</a>");
+                    response.sendRedirect("updateLend.jsp");
                 }
                 if(selected == 3){
-                    out.println("<a href=" + "adminMenuUI.jsp" + ">管理者メニューに戻る</a>");
+                    response.sendRedirect("adminMenuUI.jsp");
                 }
             }
             else{
