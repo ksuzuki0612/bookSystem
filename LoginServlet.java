@@ -26,9 +26,9 @@ public class LoginServlet extends HttpServlet{
         
         final String strID = req.getParameter("empID");
         String password = req.getParameter("password");
-        int intID = Integer.parseInt(strID);
         
         try{
+            int intID = Integer.parseInt(strID);
             final int ID = login.loginCheck(intID, password);
             
 
