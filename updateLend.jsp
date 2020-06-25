@@ -11,6 +11,7 @@
     <h2>貸出数を入力してください</h2>
     <input name="addBorrowedAmount" type="number">
     <input type="submit">
-</body>
+</form>
 	<a href="updateBook.jsp" >登録変更メニューに戻る</a>
+</body>
 </html>
