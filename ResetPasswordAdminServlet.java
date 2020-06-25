@@ -17,22 +17,12 @@ public class ResetPasswordAdminServlet extends HttpServlet{
         PrintWriter out = res.getWriter();
         final ResetPassword pass = new ResetPassword();
 
+        String ansStr = req.getParameter("ans");
+        int ans = Integer.parseInt(ansStr);
+
         try{
-            final String ansStr = req.getParameter("ans");
-            final int ans = Integer.parseInt(ansStr);
-    
             if (ans == 1) {
                 res.sendRedirect("passResetAdminUI.jsp");
-                final String strID = req.getParameter("empID");
-                final int empID = Integer.parseInt(strID);
-    
-                final String newPassword = req.getParameter("newPassword");
-                final String checkPassword = req.getParameter("checkPassword");
-                final boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
-    
-                HttpSession session = req.getSession();
-                session.setAttribute("result", result);
-                res.sendRedirect("resultChangePassAdmin.jsp");
             }
             else{
                 out.println("<a href=" + "choiceMenuAdmin.jsp" + ">メニュー画面へ戻る</a>");

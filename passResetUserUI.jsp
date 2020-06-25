@@ -5,7 +5,7 @@
 <h1>パスワード再設定</h1>
 
 
-<form action="ResetPasswordUserServlet" method="POST">
+<form action="ChangePasswordUserServlet" method="POST">
     <h2>従業員ID</h2>
     <input name="empID" type="number">
     <h2>新しいパスワード</h2>

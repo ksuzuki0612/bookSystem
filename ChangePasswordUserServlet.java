@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("ResetPasswordServletUser")
-public class ResetPasswordUserServlet extends HttpServlet{
+public class ChangePasswordUserServlet extends HttpServlet{
     protected void doPost(final HttpServletRequest req,final HttpServletResponse res)
     throws ServletException,IOException{
         
@@ -17,21 +17,16 @@ public class ResetPasswordUserServlet extends HttpServlet{
 
         final ResetPassword pass = new ResetPassword();
 
-        final String ansStr = req.getParameter("ans");
-        final int ans = Integer.parseInt(ansStr);
-
-        try{
-            if (ans == 1) {
-                res.sendRedirect("passResetUserUI.jsp");
-            }
-            else{
-                out.println("<a href=" + "choiceMenuUser.jsp" + ">メニュー画面へ戻る</a>");
-            }    
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            out.println("<a href=" + "choiceMenuUser.jsp" + ">例外が発生しました。メニュー画面へ戻る</a>");
-            out.println(e);
-        }
+        res.sendRedirect("passResetUserUI.jsp");
+        String strID = req.getParameter("empID");
+        int empID = Integer.parseInt(strID);
+    
+        String newPassword = req.getParameter("newPassword");
+        String checkPassword = req.getParameter("checkPassword");
+        boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
+    
+        HttpSession session = req.getSession();
+        session.setAttribute("result", result);
+        res.sendRedirect("resultChangePassUser.jsp");
     }
 }
