@@ -20,7 +20,7 @@ public class MainMenuAdmin extends HttpServlet{
                 response.sendRedirect("adminMenuUI.jsp");
                 break;
             case FeaturesMenu.ResetPass:
-                out.println("<a href=" + "resetPassAdminUI.jsp" + ">パスワード再設定画面</a>");
+            	response.sendRedirect("resetPassAdminUI.jsp");
                 break;
             case FeaturesMenu.EndProgram:
                 out.println("終了");
