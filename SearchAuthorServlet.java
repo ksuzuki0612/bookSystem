@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import javax.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,10 +34,13 @@ public class SearchAuthorServlet extends HttpServlet{
             if (book.isEmpty()){
                 out.println("<a href=" + "SearchMenuServlet" + ">探している著者の書籍がありません。</a>");
             } else {
-                HttpSession session = req.getSession();
-                session.setAttribute("book", book);
-                //res.sendRedirect("resultChangePassAdmin.jsp");
-                out.println("<a href=" + "ShowResultServlet" + "></a>");
+                for(Book t : book){
+                    out.println(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
+                        "ISBN","Title","Publisher","Publishdate","Author","category","Inventory","Lent out"));
+                    out.println(  String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
+                        t.getISBN() ,t.getTitle() , t.getPublisher() , new SimpleDateFormat("yyyy/MM/dd").format(t.getPublishDate()),
+                        t.getStringAuthors() , t.getField() , t.getInventory(), t.getBorrowedAmount() ));
+                }
             }
         }
         catch(Exception e){
