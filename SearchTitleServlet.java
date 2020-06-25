@@ -1,37 +1,47 @@
+import java.util.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-
+import javax.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 public class SearchTitleServlet extends HttpServlet{
-    protected void doPost(HttpServletRequest req,HttpServletResponse res)
-    throws ServletException,IOException{
-        SqlMethod sql = new SqlMethod();
-        PrintWriter out = res.getWriter();
+    public void doPost(final HttpServletRequest req, final HttpServletResponse res)
+            throws ServletException, IOException{
 
+        res.setContentType("text/html;charset=UTF8");
+     	PrintWriter out = res.getWriter();
+     	
+     	out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
+        out.println("<title>書籍タイトル検索</title>");
+        out.println("</head><body>");
+     	
+        SqlMethod sql = new SqlMethod();
+
+        
         String title = req.getParameter("searchtitle");
         
-        try{
-            boolean findtitle = sql.checkTitle(title);
 
-            if(findtitle == false){
-                out.println("探しているタイトルの書籍がありません。");
-                res.sendRedirect("choiceMenuUser.jsp");
-            }else {
-                sql.searchTitle(title);
-                res.sendRedirect("searchMenu.jsp");
-            }    
+        try{
+            List<Book> book = sql.searchTitle(title);
+            if (book.isEmpty()){
+                out.println("<a href=" + "SearchMenuServlet" + ">探しているタイトルの書籍がありません。</a>");
+            } else {
+                HttpSession session = req.getSession();
+                session.setAttribute("book", book);
+                //res.sendRedirect("resultChangePassAdmin.jsp");
+                out.println("<a href=" + "ShowResultServlet" + "></a>");
+            }
         }
         catch(Exception e){
-            out.println("SQLエラーです");
-            e.printStackTrace();
-            res.sendRedirect("choiceMenuUser.jsp");
+            out.println("<a href=" + "adminMenuUI.jsp" + ">データベースに繋ぐことが出来ません。</a>");
         }
-       
+       out.println("</body></html>");
     }
 }

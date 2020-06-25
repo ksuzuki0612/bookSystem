@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>タイトルを入力してください。。</h1>
+<h1>タイトルを入力してください。</h1>
 
 <form action="SearchTitleServlet" method="POST">
     <h2>タイトル</h2>

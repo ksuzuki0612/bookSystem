@@ -281,80 +281,82 @@ public class SqlMethod{
      * 書籍を著者ごと検索するメソッド
      *
      */
-    public boolean checkAuthor(String author)throws SQLException{
-        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-        
-        try{
-            String query = "SELECT COUNT('author') FROM bookinfo"+
-                            " WHERE"+
-                            " author LIKE '%"+ author +"%'";
-            Connection con = DriverManager.getConnection(url, userName, pwd);
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            rs.next();
-            int authorCount = rs.getInt(1);
-            st.close();
-            con.close();
-            
-            if (authorCount == 0){
-                return false;
-            }else{
-                return true;
-            }
-        }
-        finally{
-                logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
-            }
-
-        }
-
-    
     public List<Book> searchAuthor(String author){
+
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
+
         List<Book> books = new ArrayList<Book>();
-        
+      
         try{
 
-            String query =  "SELECT ISBN,"+
-                            " title, "+
-                            "publisher, "+
-                            "publish_date,"+
-                            " category,"+
-                            " author,"+
-                            " inventory,"+
-                            " borrowed"+
-                            " FROM bookinfo "+
-                            "WHERE"+
-                            " author LIKE '%"+ author +"%'";
-            
-            Connection con = DriverManager.getConnection(url, userName, pwd);
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query);   
-            
-            String bookData = "";
-            
-            while(rs.next()){
-                Book book = new Book(
-                    rs.getString(1),
-                    rs.getString(2),
-                    rs.getString(3),
-                    rs.getDate(4),
-                    rs.getString(5),
-                    this.splitList(rs.getString(6)),
-                    rs.getInt(7),
-                    rs.getInt(8));
-                books.add(book);
-               }
-            
-            st.close();
-            con.close();
-            
+            String query = "SELECT ISBN, "+
 
-        }catch(Exception e) { 
+                            "title, "+
+
+                            "publisher,"+
+
+                            " publish_date,"+
+
+                            " category,"+
+
+                            " author,"+
+
+                            " inventory,"+
+
+                            " borrowed"+
+
+                            " FROM bookinfo "+
+
+                            " WHERE"+
+
+                            " author LIKE '%"+ author +"%'";           
+    
+            Connection con = DriverManager.getConnection(url, userName, pwd);
+
+            Statement st = con.createStatement();
+
+            ResultSet rs = st.executeQuery(query);
+
+            while(rs.next()){
+
+                Book book = new Book(
+
+                    rs.getString(1),
+
+                    rs.getString(2),
+
+                    rs.getString(3),
+
+                    rs.getDate(4),
+
+                    rs.getString(5),
+
+                    this.splitList(rs.getString(6)),
+
+                    rs.getInt(7),
+
+                    rs.getInt(8));
+
+                books.add(book);
+
+              }
+
+            st.close();
+
+            con.close();
+
+        } catch(Exception e) {
+
             System.out.println(e);
-        }finally{
+
+        
+
+        } finally {
+
             logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
+
         }
+
         return books;
 
     }
@@ -364,159 +366,172 @@ public class SqlMethod{
      * 書籍を分野ごと検索メソッド
      *
      */
-     public boolean checkField(String searchfield)throws SQLException{
-        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
+    public List<Book> searchField(String category){
 
-        try{
-            String query = "SELECT COUNT('category') FROM bookinfo"+
-                            " WHERE"+
-                            " category LIKE '%"+ searchfield +"%'";
-            Connection con = DriverManager.getConnection(url, userName, pwd);
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            rs.next();
-            int categoryCount = rs.getInt(1);
-
-            if(categoryCount == 0){
-                return false;
-            }else{
-                return true;
-            }
-
-        }
-        finally{
-            logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
-        }
-
-     }
-     public List<Book> searchField(String searchfield){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
-        List<Book> books = new ArrayList<Book>();
 
+        List<Book> books = new ArrayList<Book>();
+      
         try{
 
-            String query = "SELECT ISBN, title,"+
-                            " publisher,"+
+            String query = "SELECT ISBN, "+
+
+                            "title, "+
+
+                            "publisher,"+
+
                             " publish_date,"+
+
                             " category,"+
+
                             " author,"+
+
                             " inventory,"+
+
                             " borrowed"+
+
                             " FROM bookinfo "+
-                            "WHERE"+
-                            " category LIKE '%"+ searchfield +"%'";
-            
+
+                            " WHERE"+
+
+                            " category LIKE '%"+ category +"%'";           
+    
             Connection con = DriverManager.getConnection(url, userName, pwd);
+
             Statement st = con.createStatement();
+
             ResultSet rs = st.executeQuery(query);
-            
-            String bookData = "";
 
             while(rs.next()){
-                Book book = new Book(
-                    rs.getString(1),
-                    rs.getString(2),
-                    rs.getString(3),
-                    rs.getDate(4),
-                    rs.getString(5),
-                    this.splitList(rs.getString(6)),
-                    rs.getInt(7),
-                    rs.getInt(8));
-                books.add(book);
-               }
-            
-            st.close();
-            con.close();
-            
 
-        }catch(Exception e) { 
+                Book book = new Book(
+
+                    rs.getString(1),
+
+                    rs.getString(2),
+
+                    rs.getString(3),
+
+                    rs.getDate(4),
+
+                    rs.getString(5),
+
+                    this.splitList(rs.getString(6)),
+
+                    rs.getInt(7),
+
+                    rs.getInt(8));
+
+                books.add(book);
+
+              }
+
+            st.close();
+
+            con.close();
+
+        } catch(Exception e) {
+
             System.out.println(e);
-        }finally{
+
+        
+
+        } finally {
+
             logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
+
         }
+
         return books;
+
     }
+    
 
     
     /**
      * 書籍をタイトルごと検索メソッド
      *
      */
-     public boolean checkTitle(String title)throws SQLException{
-        logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
+    public List<Book> searchTitle(String title){
 
-        try{
-            String query =  "SELECT COUNT('title') FROM bookinfo"+
-                            " WHERE"+
-                            " title LIKE '%"+ title + "%'";
-            Connection con = DriverManager.getConnection(url, userName, pwd);
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            rs.next();
-            int titleCount = rs.getInt(1);
-
-            if(titleCount == 0){
-                return false;
-            }else{
-                return true;
-            }
-        }
-            finally{
-                    logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
-        }
-
-     }
-     public List<Book> searchTitle(String title){
     	logger.entering(LogUtil.getClassName(), LogUtil.getMethodName());
 
         List<Book> books = new ArrayList<Book>();
-
-
+      
         try{
+
             String query = "SELECT ISBN, "+
+
                             "title, "+
+
                             "publisher,"+
+
                             " publish_date,"+
+
                             " category,"+
+
                             " author,"+
+
                             " inventory,"+
+
                             " borrowed"+
+
                             " FROM bookinfo "+
+
                             " WHERE"+
-                            " title LIKE '%"+ title + "%'";
-            
+
+                            " title LIKE '%"+ title +"%'";           
+    
             Connection con = DriverManager.getConnection(url, userName, pwd);
+
             Statement st = con.createStatement();
+
             ResultSet rs = st.executeQuery(query);
 
             while(rs.next()){
+
                 Book book = new Book(
+
                     rs.getString(1),
+
                     rs.getString(2),
+
                     rs.getString(3),
+
                     rs.getDate(4),
+
                     rs.getString(5),
+
                     this.splitList(rs.getString(6)),
+
                     rs.getInt(7),
+
                     rs.getInt(8));
+
                 books.add(book);
-              
-            }
+
+              }
+
             st.close();
+
             con.close();
-            
 
         } catch(Exception e) {
+
             System.out.println(e);
+
         
+
         } finally {
+
             logger.exiting(LogUtil.getClassName(), LogUtil.getMethodName());
 
         }
 
         return books;
-    }
 
+    }
+    
     public List<String> splitList(String authors){
         String str = authors;
         String[] authorsArray = str.split(",",0);
