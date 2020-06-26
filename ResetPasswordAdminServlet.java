@@ -25,7 +25,7 @@ public class ResetPasswordAdminServlet extends HttpServlet{
                 res.sendRedirect("passResetAdminUI.jsp");
             }
             else{
-                out.println("<a href=" + "choiceMenuAdmin.jsp" + ">メニュー画面へ戻る</a>");
+            	res.sendRedirect("choiceMenuAdmin.jsp");
             }    
         }
         catch(Exception e){

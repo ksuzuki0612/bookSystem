@@ -25,8 +25,8 @@ public class ResetPasswordUserServlet extends HttpServlet{
                 res.sendRedirect("passResetUserUI.jsp");
             }
             else{
-                out.println("<a href=" + "choiceMenuUser.jsp" + ">メニュー画面へ戻る</a>");
-            }    
+            	res.sendRedirect("choiceMenuUser.jsp");
+        	}
         }
         catch(Exception e){
             e.printStackTrace();
