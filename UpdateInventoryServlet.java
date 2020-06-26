@@ -18,8 +18,11 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
         	response.setContentType("text/html; charset=Shift_JIS");//[4]
             PrintWriter out = response.getWriter();
             out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
+            out.println(" <link rel= "+"stylesheet"+" href="+"updateD.css"+">");
             out.println("<title>在庫変更</title>");
             out.println("</head><body>");
+            out.println("<h1  class="+"flame16"+">書籍在庫数の更新</h1>");
+            out.println("<a class="+"btn-square"+ "href="+"updateBook.jsp"+" >登録変更メニューに戻る</a>");
             String allowISBN = request.getParameter("ISBN");
             String str = request.getParameter("inventory");
             boolean strCheck=  checkNull(str);
@@ -41,7 +44,6 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
             else{
                 out.println("初めからやり直してください。");
             }
-            out.println("<a href=" + "updateBook.jsp" + ">更新メニューに戻る</a>");
             out.println("</body></html>");
     }
     private boolean checkNull(String name) {

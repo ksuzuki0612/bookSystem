@@ -8,17 +8,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.util.logging.Logger;
  
-@WebServlet("/UpdateLendServlet")//[1]
-public class UpdateLendServlet extends HttpServlet {//[2]
+@WebServlet("/UpdateLendServlet")
+public class UpdateLendServlet extends HttpServlet {
 	Logger logger = Logger.getLogger(UpdateLendServlet.class.getName());
 	SqlMethod sql =new SqlMethod();
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {//[3]
-        	response.setContentType("text/html; charset=Shift_JIS");//[4]
+        throws ServletException, IOException {
+        	response.setContentType("text/html; charset=Shift_JIS");
             PrintWriter out = response.getWriter();
         	out.println("<!DOCTYPE html><html><head><meta charset='UTF-8' />");
             out.println("<title>ログイン</title>");
-            out.println("</head><body>");//[4]
+            out.println("<link rel="+"stylesheet"+" href="+"updateD.css"+">");
+            out.println("</head><body>");
+            out.println("<h1  class="+"flame16"+">貸出数の更新</h1>");
+            out.println("<a class="+"btn-square"+" href="+"updateBook.jsp"+" >登録変更メニューに戻る</a>");
             String aISBN = request.getParameter("ISBN");
             String str = request.getParameter("addBorrowedAmount");
             boolean strCheck = checkNull(str);

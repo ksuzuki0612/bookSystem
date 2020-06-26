@@ -3,20 +3,18 @@
 	
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
+
 <html>
 <head>
+    <link rel="stylesheet" href="updateD.css">
 	<title>書籍編集</title>
 </head>
 <body>
-    <h1>編集項目を選択してください</h1>
-     <br/>1.在庫変更<br/>
-     <br/>2.貸出本の更新<br/>
-     <br/>3.終了<br/>
-    <form action="UpdateBookServlet" method="POST">
-    	<input name="selectedUi" type="number">
-    	<input type="submit">
-    </form>
- 
+    
+    <h1  class="flame16">編集項目を選択してください</h1>
+    <h3><a href= updateInventory.jsp class="btnChoice">1.在庫変更</a></h3>
+    <h3><a href= updateLend.jsp class="btnChoice">2.貸出本の更新</a></h3>
+    <h3><a href= adminMenuU.jsp class="btnChoice">3.終了</a></h3>
 
 </body>
 </html>
