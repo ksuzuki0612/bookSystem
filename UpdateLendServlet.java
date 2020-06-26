@@ -30,19 +30,19 @@ public class UpdateLendServlet extends HttpServlet {
                 int addBorrowedAmount = Integer.parseInt(str);
                 int s = sql.dbAddBorrowedAmount( aISBN,addBorrowedAmount);
                 if(s==0){
-                    out.println("更新したい本がありません。");
+                    out.println("<p>更新したい本がありません。</p>");
                 }
                 if(s==1){
-                    out.println("貸出数は更新されました。");
+                    out.println("<p>貸出数は更新されました。</p>");
                 }
                 if(s==3){
-                    out.println("エラーが発生しました");
+                    out.println("<p>エラーが発生しました</p>");
                 }
             }
             else{
                 out.println("<p>初めからやり直してください。</p>");
             }
-            out.println("<a href=" + "updateBook.jsp" + ">更新メニューに戻る</a>");
+
             out.println("</body></html>");
     }
     private boolean checkNull(String name) {

@@ -22,7 +22,7 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
             out.println("<title>在庫変更</title>");
             out.println("</head><body>");
             out.println("<h1  class="+"flame16"+">書籍在庫数の更新</h1>");
-            out.println("<a class="+"btn-square"+ "href="+"updateBook.jsp"+" >登録変更メニューに戻る</a>");
+            out.println("<a class="+"btn-square"+" href="+"updateBook.jsp"+" >登録変更メニューに戻る</a>");
             String allowISBN = request.getParameter("ISBN");
             String str = request.getParameter("inventory");
             boolean strCheck=  checkNull(str);
@@ -31,18 +31,18 @@ public class UpdateInventoryServlet extends HttpServlet {//[2]
                 int addInventory = Integer.parseInt(str);
                 int s = sql.dbUpdataInventory( allowISBN,addInventory );
                 if(s==0){
-                    out.println("更新したい本がありません。");
+                    out.println("<p>更新したい本がありません。</p>");
                 }
                 if(s==1){
-                    out.println("在庫数は更新されました。");
+                    out.println("<p>在庫数は更新されました。</p>");
     
                 }
                 if(s==3){
-                    out.println("在庫数は更新されました。");
+                    out.println("<p>在庫数は更新されました。</p>");
                 }       
             }
             else{
-                out.println("初めからやり直してください。");
+                out.println("<p>初めからやり直してください。</p>");
             }
             out.println("</body></html>");
     }
