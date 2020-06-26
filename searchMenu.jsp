@@ -1,16 +1,16 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
+<link rel="stylesheet" href="search.css">
 <body>
 
 <h1>検索する項目を選んでください</h1>
-<h2>1.タイトル</h2>
-<h2>2.著者</h2>
-<h2>3.分野</h2>
-<h2>4.戻る</h2>
+
 
 <form action="SearchMenuServlet" method="POST">
-    <input name="MenuNum" type="number">
-    <input type="submit">
+    タイトル<input type="radio" name="searchselect" value="0"><br>
+    著者<input type="radio" name="searchselect" value="1"><br>
+    分野<input type="radio" name="searchselect" value="2"><br>
+    戻る<input type="radio" name="searchselect" value="3"><br>
 </form>
 
 </body>

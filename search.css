@@ -1,0 +1,51 @@
+@charset "UTF-8";
+h1{
+	color: #fff;
+    background-color:#0f65e7;
+    margin-bottom: 1rem;
+   
+    text-align:left;
+	
+	
+	
+}
+h2{
+    position:absolute;
+    top:35px;
+    padding: 5px 4px;
+    color: #fff;
+    background-color:#0f65e7;
+    margin-bottom: 1rem;
+    width: 100px;
+    text-align:center;
+}
+
+input#submitbutton{
+    font-size: 1.2em;
+    position: absolute;
+    top: 100px;
+    left:320px;
+}
+
+input#search{
+    position: absolute;
+    padding: 8px 25px;
+    font-size: 1.4em;
+    top: 55px;
+    left: 130px;
+}
+
+input#returnbutton{
+    font-size: 1.2em;
+    position: absolute;
+    top: 100px;
+    left:380px;
+}
+
+input#searchselect{
+	font-size: 1.2em;
+    position: absolute;
+    top: 100px;
+    left:380px;
+	
+}
