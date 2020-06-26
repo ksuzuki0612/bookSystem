@@ -7,7 +7,7 @@
 <body>
 
 
-<h2>著者</h2>
+<h2>分野</h2>
 <form action="SearchCategoryServlet" method="POST">
     
     <input id="search" name="searchauthor" type="text" placeholder="分野">

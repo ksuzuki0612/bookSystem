@@ -7,7 +7,7 @@
 <body>
 
 
-<h2>著者</h2>
+<h2>タイトル</h2>
 <form action="SearchTitleServlet" method="POST">
     
     <input id="search" name="searchauthor" type="text" placeholder="タイトル">

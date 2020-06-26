@@ -49,3 +49,11 @@ input#searchselect{
     left:380px;
 	
 }
+
+input#radio1{
+	position:absolute;
+	top:100;
+	left:100;
+	width:2em;
+	height:2em;
+}
