@@ -59,7 +59,8 @@ public class SearchCategoryServlet extends HttpServlet{
                     int borrowed = t.getBorrowedAmount();
                     out.println(borrowed);
                     req.setAttribute("borrowed", borrowed);
-                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("searchResults.jsp");
+                    RequestDispatcher rd = req.getRequestDispatcher("searchResults.jsp");
+                    rd.forward(req, res);
 
                     
                 }
@@ -68,6 +69,8 @@ public class SearchCategoryServlet extends HttpServlet{
         }
         catch(Exception e){
             out.println("<a href=" + "adminMenuUI.jsp" + ">データベースに繋ぐことが出来ません。</a>");
+            e.printStackTrace();
+            out.println(e);
         }
        out.println("</body></html>");
     }
