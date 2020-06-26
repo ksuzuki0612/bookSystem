@@ -1,17 +1,18 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
+
+<link rel="stylesheet" href="loginUI.css">
+<head>
+<title>ログイン</title>	
+</head>
 <body>
 
-<h1>ログイン画面</h1>
-
 <form action="LoginServlet" method="POST">
-    <h2>従業員ID</h2>
-    <input name="empID" type="number">
-    <h2>パスワード</h2>
-    <input name="password" type="text">
-    <input type="submit">
+    <input id = "ID" name="empID" type="number" placeholder="従業員ID">
+    <input id = "pass" name="password" type="text" placeholder="パスワード">
+    <input id = "submit_button" type="submit"  value="ログイン">
 </form>
-
 </body>
 </html>
+
 

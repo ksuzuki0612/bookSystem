@@ -1,0 +1,41 @@
+input#submit_button {
+        padding: 15px 40px;
+        font-size: 1.2em;
+        background-color: #0f65e7;
+        color: #fff;
+        border-style: none;
+        position: absolute;
+        bottom: 500px;
+        left: 0px;
+    }
+
+input#ID {
+    padding: 15px 80px;
+    font-size: 1.2em;
+    background-color: #0f65e7;
+    border-style: none;
+    position: absolute;
+    bottom: 700px;
+    left: 0px;
+    }
+
+input#pass {
+    padding: 15px 80px;
+    font-size: 1.2em;
+    background-color: #0f65e7;
+    border-style: none;
+    position: absolute;
+    bottom: 600px;
+    left: 0px;
+    }
+
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:#ccc;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color:#ccc;
+    }
+    ::placeholder{ /* Others */
+     color:#ccc
+    }
+    
