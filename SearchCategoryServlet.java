@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import javax.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,7 +44,7 @@ public class SearchCategoryServlet extends HttpServlet{
                     String publisher = t.getPublisher();
                     out.println(publisher);
                     req.setAttribute("publisher", publisher);
-                    Date pubdate = new SimpleDateFormat("yyyy/MM/dd").format(t.getPublishDate());
+                    Date pubdate = t.getPublishDate();
                     out.println(pubdate);
                     req.setAttribute("pubdate", pubdate);
                     String author = t.getStringAuthors();
