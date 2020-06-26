@@ -1,13 +1,23 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
+<link rel="stylesheet" href="search.css">
+<head>
+
+</head>
 <body>
 
-<h1>分野を入力してください。</h1>
 
+<h2>著者</h2>
 <form action="SearchCategoryServlet" method="POST">
-    <h2>分野</h2>
-    <input name="searchcategory" type="text">
-    <input type="submit">
+    
+    <input id="search" name="searchauthor" type="text" placeholder="分野">
+    <input id="submitbutton" type="submit" value="検索" placeholder="検索">
+    
+</form>
+
+<form action="searchMenu.jsp" method="POST">
+    <input id="returnbutton" type="submit" value="戻る" placeholder="検索">
+
 </form>
 
 </body>

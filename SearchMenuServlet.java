@@ -20,17 +20,17 @@ public class SearchMenuServlet extends HttpServlet{
         PrintWriter out = response.getWriter();
         SqlMethod sql = new SqlMethod();
         
-        String selected = request.getParameter("MenuNum");
+        String selected = request.getParameter("searchselect");
         
 		int n = Integer.parseInt(selected); 
         try{
-            if(n ==1){
+            if(n == 0){
             	response.sendRedirect("searchTitle.jsp");
             }
-            else if(n ==2){
+            else if(n == 1){
             	response.sendRedirect("searchAuthor.jsp");
             }
-            else if(n ==3){
+            else if(n == 2){
             	response.sendRedirect("searchCategory.jsp");
             }
             else{
