@@ -33,19 +33,16 @@ public class LoginServlet extends HttpServlet{
             
 
             if (ID == 0) {
-                //res.sendRedirect("wrongPass.jsp");
-                out.println("<a href=" + "wrongPass.jsp" + ">パスワード/IDを再入力してください</a>");
+                res.sendRedirect("wrongPass.jsp");
             }
 
             final boolean adminRight = login.checkRight(ID);
 
             if(adminRight == true){
-                //res.sendRedirect("choiceMenuAdmin.jsp"); 
-                out.println("<a href= " + "choiceMenuAdmin.jsp" + ">メニュー画面へ</a>");
+                res.sendRedirect("choiceMenuAdmin.jsp"); 
             }
             else{
-               // res.sendRedirect("choiceMenuUser.jsp");
-               out.println("<a href = " + "choiceMenuUser.jsp" + ">メニュー画面へ</a>");
+               res.sendRedirect("choiceMenuUser.jsp");
             }
         }
         catch(Exception e){
