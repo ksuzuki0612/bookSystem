@@ -6,7 +6,7 @@ input#submit_button {
         border-style: none;
         position: absolute;
         bottom: 500px;
-        left: 0px;
+        left: 650px;
     }
 
 input#ID {
@@ -16,7 +16,7 @@ input#ID {
     border-style: none;
     position: absolute;
     bottom: 700px;
-    left: 0px;
+    left: 600px;
     }
 
 input#pass {
@@ -26,7 +26,7 @@ input#pass {
     border-style: none;
     position: absolute;
     bottom: 600px;
-    left: 0px;
+    left: 600px;
     }
 
     ::-webkit-input-placeholder { /* WebKit, Blink, Edge */

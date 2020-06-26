@@ -1,18 +1,14 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
+<link rel="stylesheet" href="Password.css">
+<title>パスワード再設定</title>
 <body>
 
-<h1>パスワード再設定</h1>
-
-
 <form action="ChangePasswordUserServlet" method="POST">
-    <h2>従業員ID</h2>
-    <input name="empID" type="number">
-    <h2>新しいパスワード</h2>
-    <input name="newPassword" type="text">
-    <h2>パスワード再入力</h2>
-    <input name="checkPassword" type="text">
-    <input type="submit">
+    <input id = "ID" name="empID" type="number" placeholder="従業員ID">
+    <input id = "pass" name="password" type="text" placeholder="新しいパスワード">
+	<input id = "newPass" name="checkPassword" type="text" placeholder="パスワード確認">
+    <input id = "submit_button2" type="submit"  value="変更">
 </form>
 
 </body>
