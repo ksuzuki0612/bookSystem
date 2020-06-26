@@ -1,8 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
-<head>
-<link rel="stylesheet" href="menu.css">
-</head>
 <body>
 
 <div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; border-radius: 10px; background-color: #0f65e7; color: #ffffff; width:300px;">
