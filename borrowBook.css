@@ -1,0 +1,32 @@
+
+h1{
+    font-size: large;
+    font-weight: bolder;
+    border-style: none;
+}
+h2{
+    color: #ffffff
+    background-color: #0f65e7
+    font-size: medium;
+    font-weight: border;
+    border-style: none;
+}
+input{
+    color: #ffffff;
+    background-color: #0f65e7;
+    font-size: medium;
+    border-style: none;
+}
+button.button1{
+    color: #ffffff;
+    background-color: #248;
+    font-size: medium;
+    border-style: none;
+    padding: 10px 30px;
+
+}
+th{
+    color: #ffffff;
+    background-color: #248;
+    border-style: none;
+}

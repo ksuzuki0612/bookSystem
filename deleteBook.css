@@ -1,0 +1,20 @@
+h1{
+    text-align:center
+}
+h2{
+    text-align:center
+}
+div.input_wrapper{
+    text-align:center
+}
+input{
+    background-color: #0f65e7;
+    color: #ffffff;
+}
+div.button_wrapper{
+    text-align:center
+}
+button.button3{    
+    background-color: #248;
+    color: #ffffff;
+}
