@@ -1,0 +1,29 @@
+h1{
+    text-align:center
+}
+h2{
+    text-align:center
+}
+div.input_wrapper{
+    text-align:center
+}
+div.button_wrapper{
+    text-align:center
+}
+input{
+    background-color: #0f65e7;
+    color: #ffffff;
+}
+button.button4{
+    background-color: #248;
+    color: #ffffff;
+}
+   ::-webkit-input-placeholder { / WebKit, Blink, Edge /
+        color:#ccc;
+    }
+    :-ms-input-placeholder { / Internet Explorer 10-11 /
+       color:#ccc;
+    }
+    ::placeholder{ / Others /
+     color:#ccc
+    }
