@@ -10,6 +10,8 @@
     Welcome!
 </div>
 
+<p>メニュー番号を入力してください</p>
+
 <div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; background-color: #0f65e7; color: #ffffff; width:300px;">
 1.図書登録
 </div>
@@ -28,8 +30,6 @@
 <div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; background-color: #0f65e7; color: #ffffff; width:300px;">
 6.戻る
 </div>
-
-<p>メニュー番号を入力してください</p>
 
 <form action="FunctionAdminServlet" method="POST">
     <input name="selectedAdmin" type="number">

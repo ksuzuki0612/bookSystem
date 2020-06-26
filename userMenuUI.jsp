@@ -13,6 +13,8 @@
     Welcome!
 </div>
 
+<p>メニュー番号を入力してください</p>
+
 <div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; background-color: #0f65e7; color: #ffffff; width:300px;">
     1.検索
 </div>
@@ -22,8 +24,6 @@
 <div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; background-color: #0f65e7; color: #ffffff; width:300px;">
     3.戻る
 </div>
-
-<p>メニュー番号を入力してください</p>
 
 <form action="FunctionUserServlet" method="POST">
     <input name="selectedUser" type="number">
