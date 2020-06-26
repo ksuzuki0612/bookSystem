@@ -2,7 +2,6 @@ import java.util.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import javax.servlet.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,11 +34,33 @@ public class SearchCategoryServlet extends HttpServlet{
                 out.println("<a href=" + "SearchMenuServlet" + ">探している分野の書籍がありません。</a>");
             } else {
                 for(Book t : book){
-                    out.println(String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
-                        "ISBN","Title","Publisher","Publishdate","Author","category","Inventory","Lent out"));
-                    out.println(  String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
-                        t.getISBN() ,t.getTitle() , t.getPublisher() , new SimpleDateFormat("yyyy/MM/dd").format(t.getPublishDate()),
-                        t.getStringAuthors() , t.getField() , t.getInventory(), t.getBorrowedAmount() ));
+                    String ISBN = t.getISBN();
+                    out.println(ISBN);
+                    req.setAttribute("ISBN", ISBN);
+                    String title = t.getTitle();
+                    out.println(title);
+                    req.setAttribute("title", title);
+                    String publisher = t.getPublisher();
+                    out.println(publisher);
+                    req.setAttribute("publisher", publisher);
+                    Date pubdate = new SimpleDateFormat("yyyy/MM/dd").format(t.getPublishDate());
+                    out.println(pubdate);
+                    req.setAttribute("pubdate", pubdate);
+                    String author = t.getStringAuthors();
+                    out.println(author);
+                    req.setAttribute("author", author);
+                    String field = t.getField();
+                    out.println(field);
+                    req.setAttribute("field", field);
+                    int inventory = t.getInventory();
+                    out.println(inventory);
+                    req.setAttribute("inventory", inventory);
+                    int borrowed = t.getBorrowedAmount();
+                    out.println(borrowed);
+                    req.setAttribute("borrowed", borrowed);
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("searchResults.jsp");
+
+                    
                 }
                 
             }

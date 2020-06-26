@@ -10,7 +10,7 @@
 <h2>タイトル</h2>
 <form action="SearchTitleServlet" method="POST">
     
-    <input id="search" name="searchauthor" type="text" placeholder="タイトル">
+    <input id="search" name="searchtitle" type="text" placeholder="タイトル">
     <input id="submitbutton" type="submit" value="検索" placeholder="検索">
     
 </form>

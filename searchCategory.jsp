@@ -10,7 +10,7 @@
 <h2>分野</h2>
 <form action="SearchCategoryServlet" method="POST">
     
-    <input id="search" name="searchauthor" type="text" placeholder="分野">
+    <input id="search" name="searchcategory" type="text" placeholder="分野">
     <input id="submitbutton" type="submit" value="検索" placeholder="検索">
     
 </form>
