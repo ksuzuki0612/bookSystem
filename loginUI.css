@@ -27,7 +27,7 @@ input#pass {
     position: absolute;
     bottom: 400px;
     left: 450px;
-    }
+   }
 
     ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
         color:#ccc;
