@@ -1,16 +1,33 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <html>
+<head>
+<link rel="stylesheet" href="menu.css">
+</head>
 <body>
 
-<h1>メニュー画面</h1>
-<h2>1.検索</h2>
-<h2>2.予約取消</h2>
-<h2>3.戻る</h2>
-<h2>メニュー番号を入力してください</h2>
+<div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; border-radius: 10px; background-color: #0f65e7; color: #ffffff; width:300px;">
+    トップメニュー
+</div>
+
+<div style="padding: 10px; margin-bottom: 10px; border-style: none; background-color: #0f65e7; color: #ffffff; width:300px;">
+    Welcome!
+</div>
+
+<div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; background-color: #0f65e7; color: #ffffff; width:300px;">
+    1.検索
+</div>
+<div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; background-color: #0f65e7; color: #ffffff; width:300px;">
+    2.予約取消
+</div>
+<div style="padding: 10px; margin-bottom: 10px; border-style: none; text-align:center; background-color: #0f65e7; color: #ffffff; width:300px;">
+    3.戻る
+</div>
+
+<p>メニュー番号を入力してください</p>
 
 <form action="FunctionUserServlet" method="POST">
     <input name="selectedUser" type="number">
-    <input type="submit">
+    <input type="submit" value="送信">
 </form>
 
 </body>
