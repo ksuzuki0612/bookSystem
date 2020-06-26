@@ -11,7 +11,9 @@
     著者<input type="radio" name="searchselect" value="1"><br>
     分野<input type="radio" name="searchselect" value="2"><br>
     戻る<input type="radio" name="searchselect" value="3"><br>
+	<input type="submit" value="選択">
 </form>
+
 
 </body>
 </html>
