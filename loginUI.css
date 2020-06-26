@@ -5,8 +5,8 @@ input#submit_button {
         color: #fff;
         border-style: none;
         position: absolute;
-        bottom: 500px;
-        left: 650px;
+        bottom: 300px;
+        left: 500px;
     }
 
 input#ID {
@@ -15,8 +15,8 @@ input#ID {
     background-color: #0f65e7;
     border-style: none;
     position: absolute;
-    bottom: 700px;
-    left: 600px;
+    bottom: 500px;
+    left: 450px;
     }
 
 input#pass {
@@ -25,8 +25,8 @@ input#pass {
     background-color: #0f65e7;
     border-style: none;
     position: absolute;
-    bottom: 600px;
-    left: 600px;
+    bottom: 400px;
+    left: 450px;
     }
 
     ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
