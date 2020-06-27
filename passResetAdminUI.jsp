@@ -4,7 +4,6 @@
 <title>パスワード再設定</title>
 <body>
 
-
 <form action="ChangePasswordAdminServlet" method="POST">
     <input id = "ID" name="empID" type="number" placeholder="従業員ID">
     <input id = "pass" name="password" type="text" placeholder="新しいパスワード">

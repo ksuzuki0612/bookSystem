@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("ResetPasswordServletUser")
 public class ChangePasswordAdminServlet extends HttpServlet{
-    protected void doPost(final HttpServletRequest req,final HttpServletResponse res)
+    protected void doPost(HttpServletRequest req,HttpServletResponse res)
     throws ServletException,IOException{
         
         res.setContentType("text/html;charset=UTF8");
@@ -19,9 +19,9 @@ public class ChangePasswordAdminServlet extends HttpServlet{
 
         String strID = req.getParameter("empID");
         int empID = Integer.parseInt(strID);
-    
-        String newPassword = req.getParameter("newPassword");
+        String newPassword = req.getParameter("password");
         String checkPassword = req.getParameter("checkPassword");
+        
         boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
     
         HttpSession session = req.getSession();

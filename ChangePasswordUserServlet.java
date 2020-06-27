@@ -15,14 +15,13 @@ public class ChangePasswordUserServlet extends HttpServlet{
         res.setContentType("text/html;charset=UTF8");
         PrintWriter out = res.getWriter();
 
-        final ResetPassword pass = new ResetPassword();
+        ResetPassword pass = new ResetPassword();
 
-        res.sendRedirect("passResetUserUI.jsp");
         String strID = req.getParameter("empID");
         int empID = Integer.parseInt(strID);
-    
-        String newPassword = req.getParameter("newPassword");
+        String newPassword = req.getParameter("password");
         String checkPassword = req.getParameter("checkPassword");
+        
         boolean result = pass.checkResetPass(empID, newPassword, checkPassword);
     
         HttpSession session = req.getSession();
