@@ -32,7 +32,7 @@ public class DeleteBookServlet extends HttpServlet{
             if (register == true){
                 out.println("<a href=" + "adminMenuUI.jsp" + ">書籍が削除されました。</a>");
             } else {
-                out.println("<a href=" + "adminMenuUI.jsp" + ">書籍が削除出来ませんでした。</a>");
+                out.println("<a href=" + "adminMenuUI.jsp" + ">削除する書籍がありません。</a>");
             }
         }
         catch(Exception e){
